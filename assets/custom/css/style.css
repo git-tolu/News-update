@@ -1,0 +1,271 @@
+/* hover css */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    margin-top: 0;
+    background-color: #f8f9fa9e !important;
+    border-top: 3px solid #0d6efd;
+    text-align: justify;
+}
+
+.mar {
+    margin-top: 50px;
+}
+
+.nav_bg {
+    background-color: white;
+}
+
+/* Smartphones (portrait and landscape) ---------- */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    /* styles */
+    .mar {
+        margin-top: 10px;
+    }
+
+    .fiqure {
+        margin-top: 5px;
+    }
+
+    .text {
+        font-size: smaller;
+    }
+
+    .thick {
+        font-size: large;
+        font-weight: 900;
+    }
+
+}
+
+/* Tablets, iPads (portrait and landscape) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* styles */
+    .mar {
+        margin-top: 50px;
+    }
+
+    .fiqure {
+        margin-top: 5px;
+    }
+
+    .text {
+        font-size: smaller;
+    }
+
+    .thick {
+        font-size: large;
+        font-weight: 900;
+    }
+}
+
+.bor {
+    /* Fallback for browsers that don't support gradients */
+    background: #0d6efd;
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(left, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    /* For Internet Explorer 10 */
+    background: -ms-linear-gradient(left, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    /* Standard syntax */
+    background: linear-gradient(to right, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    padding: 1px;
+    width: 300px;
+    margin: 5px;
+}
+
+.liner-gra {
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(left, rgb(64, 23, 214), rgba(143, 167, 230, 0.887));
+    /* For Internet Explorer 10 */
+    background: -ms-linear-gradient(left, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    /* Standard syntax */
+    background: linear-gradient(to right, rgb(0, 60, 255), rgba(151, 179, 248, 0));
+}
+
+/* countinuation of css */
+.box {
+    margin: 10px;
+    padding: 5px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.car {
+    padding: 40px !important;
+}
+
+.comment-sm:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.date-sm:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.view-sm:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.read:hover {
+    color: #0d6efd !important;
+    cursor: pointer;
+}
+
+.blog-title:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.category {
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 30%;
+}
+
+.author {
+    cursor: pointer;
+    border-radius: 30px;
+    color: white !important;
+    /* background-color: #083578 !important; */
+}
+
+.landing {
+    background-position: center;
+    object-fit: cover;
+    height: 500px;
+}
+
+.cat-links {
+    list-style: none;
+
+}
+
+.cat-links li {
+    margin: 5px;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+.ttl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    padding-left: 17px;
+}
+
+.count {
+    background-color: #083578;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 9px;
+}
+
+.line {
+    /* Fallback for browsers that don't support gradients */
+    background: #0d6efd;
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(left, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    /* For Internet Explorer 10 */
+    background: -ms-linear-gradient(left, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    /* Standard syntax */
+    background: linear-gradient(to right, rgb(55, 0, 255), rgba(0, 72, 255, 0.887));
+    padding: 2px;
+    width: 20px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.ul {
+    list-style: none;
+}
+
+.ul li {
+    margin: 5px;
+}
+
+.icon {
+    background-color: #083578;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f2ff;
+    margin: 10px;
+    border-radius: 50px;
+    width: auto;
+    padding: 9px;
+}
+
+.tags:hover {
+    background-color: #0d6efd;
+    transition: 1s;
+    color: white !important;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar:hover {
+    width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.081);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(97, 88, 88, 0.348);
+    border-radius: 20px;
+}
+
+.clear {
+    list-style: none;
+}
+
+.clear li {
+    margin: 5px;
+}
+
+.footer-icon {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.shadow {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.405);
+}
+[data-aos-delay] {
+    transition-delay: 0 !important;
+  }
