@@ -274,3 +274,20 @@ body::-webkit-scrollbar-thumb {
 [data-aos-delay] {
     transition-delay: 0 !important;
   }
+
+.full-screen{
+    width: 100vw;
+    height: 100vh;
+}
+.box{
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+.link{
+    text-decoration: none;
+}
+.form-img{
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* object-fit: cover; */
+}
