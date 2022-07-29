@@ -13,12 +13,12 @@ jQuery(document).ready(function ($) {
 			0: {
 				items: 1
 			},
-			480: {
+			700: {
 				items: 2
 			},
-			700: {
+			1200: {
 				items: 3
-			},
+			}
 		}
 	})
 	$('#owl-demo').owlCarousel({

@@ -1,0 +1,30 @@
+.position-sticky{
+    position: fixed !important;
+}
+.cursor{
+    cursor: pointer;
+}
+.clear {
+    list-style: none;
+}
+
+.clear li {
+    margin: 2px !important;
+}
+
+.footer-icon {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+}
+/* Dashboard media query */
+@media (max-width: 992px) {
+    .footer-icon {
+        background-color: #0d6efd;
+        color: white;
+        border-radius: 50%;
+        padding: 7px !important;
+    }
+}
+

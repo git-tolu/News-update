@@ -15,22 +15,22 @@
 <body>
 
     <div class="full-screen d-flex justify-content-center align-items-center text-center">
-        <div class="card p-2 box" style="max-width: 800px;">
+        <div class="card p-2 box" style="max-width: 800px !important; height: auto  !important;">
             <div class="row g-0 ">
-                <div class="col-md-5  d-none d-md-inline-block">
-                    <img src="../media/landing/undraw_Blogging_re_kl0d.png" class="card-img-top h-100" alt="...">
+                <div class="col-md-6  d-none d-md-inline-block">
+                    <img src="../media/landing/—Pngtree—personal blog_2853664.png" class="card-img-top h-100" alt="...">
                 </div>
-                <div class="col-md-7 col-sm-12">
+                <div class="col-md-6 col-sm-12" >
                     <div class="card-body">
                         <div class="container">
                             <!-- login form -->
                             <form id="login" class="p-3">
                                 <div class="form-group mb-2">
-                                    <input type="text" class="form-control" name="inputName" id="inputName"
+                                    <input type="email" class="form-control" name="userName" id="userName"
                                         placeholder="Enter email" required="">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="text" class="form-control" name="inputEmail" id="inputEmail"
+                                    <input type="password" class="form-control" name="userEmail" id="userEmail"
                                         placeholder="Enter password" required="">
                                 </div>
                                 <div class="form-group mb-2">
@@ -38,27 +38,37 @@
                                         id="loginBTN" value="Login">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <p class="text-muted">Dont have an account ? <a id="loginLink" href=""
-                                            class="link text-primary">Register</a> </p>
+                                    <div class="text-muted">Dont have an account ? <p id="loginLink" href=""
+                                            class="link text-primary">Register</p>
+                                    </div>
                                 </div>
                             </form>
                             <!-- register form -->
                             <form id="register" style=" display: none;">
                                 <div class="form-group mb-2">
-                                    <input type="text" class="form-control" name="inputName" id="inputName"
+                                    <input type="text" class="form-control" name="newUserName" id="newUserName"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="email" class="form-control" name="newUserEmail" id="newUserEmail"
                                         placeholder="Enter email">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="text" class="form-control" name="inputEmail" id="inputEmail"
+                                    <input type="password" class="form-control" name="newUserPassword" id="newUserPassword"
                                         placeholder="Enter password">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="button"  class="form-control btn btn-outline-primary" name="inputSubmit"
+                                    <input type="password" class="form-control" name="newUserConfirmPassword" id="newUserConfirmPassword"
+                                        placeholder="Confirm passowrd">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="button" class="form-control btn btn-outline-primary" name="inputSubmit"
                                         id="registerBTN" value="Register">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <p class="text-muted">Already registered ? <a id="registerLink" href=""
-                                            class="link text-primary">login</a> </p>
+                                    <div class="text-muted">Already registered ? <p id="registerLink" href=""
+                                            class="link text-primary">login</p>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -86,7 +96,7 @@
     <script src="../assets/custom/js/custom.js"></script>
     <script src="../assets/custom/js/main.js"></script>
     <script src="../assets/custom/js/validate.js"></script>
-    
+
 </body>
 
 </html>

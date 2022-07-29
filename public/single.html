@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News-update</title>
+    <title>News-update Single-page</title>
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <!-- Custom css -->
@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <!-- ===== Content ====== -->
     <!-- ===== Navbar ====== -->
     <nav class="navbar  sticky-top navbar-expand-lg  nav_bg navbar-light justify-content-end py-4">
         <div class="container justify-content-center">
@@ -30,7 +31,8 @@
                 <button class="navbar-toggler d-flex navBtn justify-content-end align-item-end text-end d-lg-none"
                     type="button" data-toggle="collapse" data-target="#collapsibleNavId"
                     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon d-flex justify-content-end align-item-end text-end"></span>
+                    <i id="mobile-menu" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    <i class="fa fa-times" style="display: none;" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavId">
@@ -40,32 +42,32 @@
                             Home</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link  px-5 text-uppercase" href="#" id="dropdownId" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Category </a>
+                        <a class="nav-link  px-5 text-uppercase arrowHover" href="#" id="dropdownId"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <i
+                                class="fa fa-angle-right float-end arrow" style="visibility: collapse;"
+                                aria-hidden="true"></i> </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="#">Action 1</a>
                             <a class="dropdown-item" href="#">Action 2</a>
-                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 6</a>
                             <a class="dropdown-item" href="#">Action 2</a>
                             <a class="dropdown-item" href="#">Action 1</a>
                             <a class="dropdown-item" href="#">Action 2</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5 " href="#about">
-                            About
-                            us</a>
+                        <a class="nav-link text-uppercase px-5" href="#contact"> Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5" href="#contact"> Contact</a>
+                        <a class="nav-link text-uppercase px-5 btn btn-outline-primary " href="#">
+                            Be a registered user
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- ===== End Navbar ====== -->
-
-    <!-- ===== Content ====== -->
     <div class="container" id="home">
         <!-- ==== Post  ==== -->
         <div class="row mb-3" data-aos="fade-up" data-aos-delay="600">
@@ -80,22 +82,28 @@
             <!-- ==== Post Cards ==== -->
             <div class="col-md-8" data-aos="fade-right" data-aos-delay="400">
                 <div class="new-inner">
-                    <div class="card shadow" style="width: 800px;" data-aos="fade-zoom" data-aos-delay="600">
+                    <div class="card shadow" data-aos="fade-zoom" data-aos-delay="600">
                         <div class="card-header">
-                            <img class="card-img-top" src="/media/landing/concept-blogging_88465-58.webp" alt="">
+                            <img class="card-img-top singe-img" src="/media/landing/—Pngtree—personal blog_2853664.png"
+                                width="500px" height="500px" alt="">
                         </div>
                         <div class="card-body">
                             <div class="category bg-primary p-2 text-center m-2">Sports</div>
                             <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Dolor, numquam.</h4>
                             <div class="card-text d-flex m-2">
-                                <small class="text-muted comment-sm mx-2"><i class="fa fa-comment"
-                                        aria-hidden="true"></i>Comments
-                                    500</small>
-                                <small class="view-sm mx-2"><i class="fa fa-eye" aria-hidden="true"></i>Views
-                                    500</small>
-                                <small class="date-sm mx-2"><i class="fa fa-calendar" aria-hidden="true"></i> July 3,
-                                    2022</small>
+                                <p class="sm-btn d-flex">
+                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <small class="text-muted comment-sm  mx-2">Comments 500</small>
+                                </p>
+                                <p class="sm-btn d-flex">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <small class="view-sm mx-2 ">Views 500</small>
+                                </p>
+                                <p class="sm-btn d-flex">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    <small class="date-sm mx-2 "> July 3, 2022</small>
+                                </p>
                             </div>
                             <div class="card-text text-secondary">Lorem, ipsum dolor sit amet consectetur adipisicing
                                 elit. Maxime consectetur itaque facilis distinctio pariatur iure quis, voluptas
@@ -139,8 +147,8 @@
                                 By Tolu
                             </div>
                             <div class="card-text">
-                                <p class="read"> <a href="index.html" class="read text-muted"><i
-                                            class="fa fa-arrow-left" aria-hidden="true"></i> Return to Home page</a>
+                                <p class="read"> <a href="index.html" class="read text-muted"> View Profile <i
+                                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
                                 </p>
                             </div>
                         </div>
@@ -170,14 +178,20 @@
                     <div class="p-5 d-flex">
                         <h4>Never Miss News</h4>
                     </div>
-                    <div class="social-links">
-                        <ul class="d-flex ul">
+                    <div class="social-links p-5">
+                        <span class="fa p-3 icon fa-facebook-f"></span>
+                        <i class="fa  p-3 icon fa-linkedin" aria-hidden="true"></i>
+                        <span class="fa p-3 icon fa-twitter"></span>
+                        <span class="fa p-3 icon fa-instagram"></span>
+                        <span class="fa p-3 icon fa-youtube"></span>
+
+                        <!-- <ul class="d-flex ul">
                             <li><a href="#"><span class="fa p-3 icon fa-facebook-f"></span></a></li>
                             <li><a href="#"><span class="fa p-3 icon fa-twitter"></span></a></li>
                             <li><a href="#"> <i class="fa  p-3 icon fa-linkedin" aria-hidden="true"></i> </a></li>
                             <li><a href="#"><span class="fa p-3 icon fa-instagram"></span></a></li>
                             <li><a href="#"><span class="fa p-3 icon fa-youtube"></span></a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <div class="card mb-3" data-aos="fade-zoom" data-aos-delay="800">
@@ -214,8 +228,8 @@
                     <div class="card  box" style="max-width: 500px;">
                         <div class="row g-0 ">
                             <div class="col-sm-5 ">
-                                <img src="../media/landing/concept-blogging_88465-58.webp" class="card-img-top h-100"
-                                    alt="...">
+                                <img src="../media/landing/—Pngtree—personal blog_2853664.png"
+                                    class="card-img-top h-100" alt="...">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -236,8 +250,8 @@
                     <div class="card  box" style="max-width: 500px;">
                         <div class="row g-0 ">
                             <div class="col-sm-5 ">
-                                <img src="../media/landing/concept-blogging_88465-58.webp" class="card-img-top h-100"
-                                    alt="...">
+                                <img src="../media/landing/—Pngtree—personal blog_2853664.png"
+                                    class="card-img-top h-100" alt="...">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -257,8 +271,8 @@
                     <div class="card  box" style="max-width: 500px;">
                         <div class="row g-0 ">
                             <div class="col-sm-5 ">
-                                <img src="../media/landing/concept-blogging_88465-58.webp" class="card-img-top h-100"
-                                    alt="...">
+                                <img src="../media/landing/—Pngtree—personal blog_2853664.png"
+                                    class="card-img-top h-100" alt="...">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -278,8 +292,8 @@
                     <div class="card  box" style="max-width: 500px;">
                         <div class="row g-0 ">
                             <div class="col-sm-5 ">
-                                <img src="../media/landing/concept-blogging_88465-58.webp" class="card-img-top h-100"
-                                    alt="...">
+                                <img src="../media/landing/—Pngtree—personal blog_2853664.png"
+                                    class="card-img-top h-100" alt="...">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
@@ -300,8 +314,8 @@
                     <div class="card  box" style="max-width: 500px;">
                         <div class="row g-0 ">
                             <div class="col-sm-5 ">
-                                <img src="../media/landing/concept-blogging_88465-58.webp" class="card-img-top h-100"
-                                    alt="...">
+                                <img src="../media/landing/—Pngtree—personal blog_2853664.png"
+                                    class="card-img-top h-100" alt="...">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">

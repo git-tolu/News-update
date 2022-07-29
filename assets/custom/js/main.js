@@ -4,11 +4,11 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
- /**
-   * Testimonials slider
-   */
+  /**
+    * Testimonials slider
+    */
   new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
@@ -23,9 +23,17 @@
       clickable: true
     },
     breakpoints: {
-      320: {
-        slidesPerView: 3,
+      0: {
+        slidesPerView: 1,
         spaceBetween: 20
+      },
+      700: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 10
       }
     }
   });
@@ -43,9 +51,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -53,7 +61,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);

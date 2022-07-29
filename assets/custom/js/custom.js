@@ -38,20 +38,32 @@ $(document).ready(function () {
         })
     });
 
-    //   login and register animation
-    $('#loginLink').click(function () {
-        // $('form').animate({ height: "toggle", });
-        $('#register').show();
+    // user login and registragion animation
+    $('.link').click(function () {
+        $('form').animate({ height: "toggle", });
     });
-    $('#registerLink').click(function () {
-        // $('form').animate({ height: "toggle", });
-        $('#login').hide();
+
+    // mobile menu javascript
+    $(".fa-ellipsis-v").click(function (e) {
+        e.preventDefault();
+        $(".fa-times").show();
+        $(".fa-ellipsis-v").hide();
     });
-    // $('.link').click(function () {
-    //     $('form').animate({ height: "toggle", });
-    //   });
+    $(".fa-times").click(function (e) {
+        e.preventDefault();
+        $(".fa-times").hide();
+        $(".fa-ellipsis-v").show();
+    });
 
-
+    $(".arrowHover").hover(function () {
+        // over
+        $(".arrow").removeClass("fa-angle-right");
+        $(".arrow").addClass("fa-angle-down");
+    }, function () {
+        // out
+        $(".arrow").addClass("fa-angle-right");
+        $(".arrow").removeClass("fa-angle-down");
+    });
 });
 
 
