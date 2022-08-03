@@ -46,7 +46,7 @@
     .ul li {
         margin: 0px !important;
     }
-    
+
 
 }
 
@@ -78,7 +78,7 @@
     .ul li {
         margin: 0px !important;
     }
-    
+
 }
 
 .bor {
@@ -356,20 +356,25 @@ body::-webkit-scrollbar-thumb {
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
         margin: 5px;
     }
+
     .arrow {
         visibility: visible !important;
     }
+
     .ul li {
         margin: 0px !important;
     }
-    .sm-btn{
+
+    .sm-btn {
         font-size: 10px !important;
     }
-    .small-tab{
+
+    .small-tab {
         font-size: 5px !important;
     }
 }
-.singe-img{
+
+.singe-img {
     object-fit: cover;
     background-position: center;
 }

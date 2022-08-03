@@ -6,4 +6,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 # this is for error page 
-ErrorDocument 404 http://localhost/scopp/404
+ErrorDocument 404 http://localhost/news-update/userDashboard/404
