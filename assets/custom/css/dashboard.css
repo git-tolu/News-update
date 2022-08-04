@@ -1,5 +1,5 @@
 .position-sticky {
-    position: sticky;
+    position: sticky !important;
 }
 
 .cursor {
@@ -47,47 +47,87 @@ body::-webkit-scrollbar-thumb {
     background-color: rgba(97, 88, 88, 0.348);
     border-radius: 20px;
 }
+
 /* dashboard */
-#side_nav{
+#side_nav {
     min-width: 250px;
     max-width: 250px;
     transition: all 0.3s;
 }
-#sidebarMenu{
+
+#sidebarMenu {
     /* min-width: 250px;
     max-width: 250px; */
     transition: all 0.3s;
 }
-.content{
+
+.content {
     min-height: 100vh;
     width: 100%;
 }
-.navbar-nav .active{
+
+.navbar-nav .active {
     background-color: #fff;
     border-radius: 8px;
     color: #0d6efd !important;
     padding: 5px;
 }
-@media(max-width: 992px){
-    #side_nav{
+
+.close-btn {
+    display: none;
+}
+
+.slimnav {
+    display: block;
+    transition: all 0.3s;
+}
+
+@media(max-width: 992px) {
+    #side_nav {
         margin-left: -500px;
         position: fixed !important;
         min-height: 100vh;
         z-index: 1;
     }
-    #side_nav.active{
+
+    .close-btn {
+        display: block;
+    }
+
+    .slimnav {
+        display: none;
+    }
+
+    #side_nav.active {
         margin-left: 0;
     }
-    #sidebarMenu{
+
+    #sidebarMenu {
         margin-left: -500px;
         position: fixed;
         min-height: 100vh;
         z-index: 1;
     }
-    #sidebarMenu.active{
+
+    #sidebarMenu.active {
         margin-left: 0;
         width: 30%;
 
     }
+
+    .menu_end {}
 }
 
+.bignav {
+    display: none !important;
+    transition: all 0.3s;
+}
+
+.smallnav {
+    display: block !important;
+    transition: all 0.3s;
+}
+
+.brround{
+    border-radius: 50%;
+}

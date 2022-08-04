@@ -3,10 +3,20 @@ $(".sidebar .container-fluid ul li a").on('click', function () {
     $(this).addClass('active');
 });
 $(".open-btn").on('click', function () {
-    $(".sidebar").addClass('active');
-    // $(".sidebar").toggleClass('collapse');
+    $(".fullnav").addClass('active');
+    $(".topnav").removeClass("sticky-top");
+    // $(".fullnav").toggleClass('collapse');
 })
 $(".close-btn").on('click', function () {
-    $(".sidebar").removeClass('active');
+    $(".fullnav").removeClass('active');
+    $(".topnav").addClass("sticky-top");
+})
+
+$(".slimnav").on('click', function(){
+    // $(".sidebar").toggleClass('collapse');
+    // $("#side_nav").addClass("bignav");
+    // $(".silmsidebar").show()
+    // $("#side_nav").toggleClass("bignav");
+    $(".silmsidebar").toggle();
 })
 
