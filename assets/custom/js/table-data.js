@@ -18,6 +18,13 @@ $(function(e) {
             sSearch: '',
         }
     });
+    $('#responsive-datatable2').DataTable({
+        language: {
+            searchPlaceholder: 'Search...',
+            scrollX: "100%",
+            sSearch: '',
+        }
+    });
 
     //______File-Export Data Table
     var table = $('#file-datatable').DataTable({

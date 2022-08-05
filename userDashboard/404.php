@@ -13,6 +13,60 @@
 </body>
 
 </html>
+<!-- ==== slim sidebar ==== -->
+<div class="d-flex flex-column sticky-top sidebar silmsidebar  flex-shrink-0 bg-light" style="display: none !important;" id="slim_nav">
+    <a href="#" class="d-block p-3 link-dark text-decoration-none" title="show full nav" data-bs-toggle="tooltip" data-bs-placement="right">
+        <span class="visually-hidden">Icon-only</span>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAARElEQVRoge3WMQoAIRAEwcH//8qHaSRoKsctQhVsPmzUCQBw6EnGY9fX+PbxM/42qgcAAPAoGV9IxgMAcEfGF5LxALCb4oGLEq8pXZsAAAAASUVORK5CYII=" width="20" height="20" class="mt-2 ml-5 pl-5 slimnav" style="cursor: pointer;">
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+        <li class="nav-item">
+            <a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg class="bi" width="24" height="24" role="img" aria-label="Home">
+                    <use xlink:href="#home" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-3 border-bottom" title="Profile" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-3 border-bottom" title="Messages" data-bs-toggle="tooltip" data-bs-placement="right">
+                <img src="../media/svg/message-svgrepo-com.svg" class="me-2" width="15" height="16" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-3 border-bottom" title="Manage Posts" data-bs-toggle="tooltip" data-bs-placement="right">
+                <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid" />
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-3 border-bottom" title="Manage Users" data-bs-toggle="tooltip" data-bs-placement="right">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB5UlEQVRIie3VP08VQRQF8N9D/higwcRCpLMQpbRQW7SwV4SK2BgTLYwfQD8BmthooY3/PgEJ0WijiXY2ajTBGCFBGwmRII2CWOzdvMcwb8EIle8kk9mcc+89s7N3Zmmhhf8dNVzAayzjG25i104bT2AtM95gZDsM9uCZ4q3uB3cAq02M1/AT/RH7KHKfRq0NaMtwY3iHE+jGYvBHm8SX6MCpeP4euSfxFqObGXfhFvY1cEsx768wLbE35sUGrh+30VllPIi+hBuI+eMWjKdjThfZh4NVxh2ZYksZrhnWYv6R0bqqjKcVDdSI7lxiE5QL70n4VfXdyGLIxm79EgXb8DCjl+NBxHTia0Yf2mzFHzJJE6EfUhyTVF9W/4a5s/5e/jOuw0gm8Zd6k41n9PHQBiI21U9vZkqxXVNJ4mPFdQnDmcLDodXwJNGmVJ//dbgUSTM4h/bgezOFy4X1Rkx75MyEdnGrpscxh3vq3dmJ8w3FcmMmYsqLokdx3c7hWJXhEUziN+6ob+1ZzFYYpmNW/YdRw92oORke63ANK5H4SXFma7jxF4bpuB41duNzcCu4WpqOJQmXgz/zD6ZpN19J+FF4lZCDEfxiG4yfR63DCf8SFhKybKj5bTCej1q9Cb+ghRZ2Cn8AoIvx7ECbd4kAAAAASUVORK5CYII=" width="20" height="20" class="me-2">
+            </a>
+        </li>
+    </ul>
+    <div class="dropdown border-top">
+        <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+    </div>
+</div>
 
 <!-- ==== coontent ==== -->
 <div class="main-container d-flex">
