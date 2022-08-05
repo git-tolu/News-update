@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class="bg-light">
     <!-- ==== svg ==== -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -107,7 +107,7 @@
     <div class="main-container d-flex">
         <!-- ==== sidebar ==== -->
         <!-- ==== full sidebar ==== -->
-        <div class="d-flex flex-column sticky-top  fullnav p-3 bg-light" style="height: 100vh;" id="side_nav">
+        <div class="d-flex flex-column sticky-top  fullnav p-3 bg-white" style="height: 100vh;" id="side_nav">
             <div class="d-flex position-sticky navbar-brand">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32">
@@ -155,6 +155,13 @@
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB5UlEQVRIie3VP08VQRQF8N9D/higwcRCpLMQpbRQW7SwV4SK2BgTLYwfQD8BmthooY3/PgEJ0WijiXY2ajTBGCFBGwmRII2CWOzdvMcwb8EIle8kk9mcc+89s7N3Zmmhhf8dNVzAayzjG25i104bT2AtM95gZDsM9uCZ4q3uB3cAq02M1/AT/RH7KHKfRq0NaMtwY3iHE+jGYvBHm8SX6MCpeP4euSfxFqObGXfhFvY1cEsx768wLbE35sUGrh+30VllPIi+hBuI+eMWjKdjThfZh4NVxh2ZYksZrhnWYv6R0bqqjKcVDdSI7lxiE5QL70n4VfXdyGLIxm79EgXb8DCjl+NBxHTia0Yf2mzFHzJJE6EfUhyTVF9W/4a5s/5e/jOuw0gm8Zd6k41n9PHQBiI21U9vZkqxXVNJ4mPFdQnDmcLDodXwJNGmVJ//dbgUSTM4h/bgezOFy4X1Rkx75MyEdnGrpscxh3vq3dmJ8w3FcmMmYsqLokdx3c7hWJXhEUziN+6ob+1ZzFYYpmNW/YdRw92oORke63ANK5H4SXFma7jxF4bpuB41duNzcCu4WpqOJQmXgz/zD6ZpN19J+FF4lZCDEfxiG4yfR63DCf8SFhKybKj5bTCej1q9Cb+ghRZ2Cn8AoIvx7ECbd4kAAAAASUVORK5CYII="
                             width="20" height="20" class="me-2">
                         <span>Manage Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admin.html" class="nav-link link-dark">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB5UlEQVRIie3VP08VQRQF8N9D/higwcRCpLMQpbRQW7SwV4SK2BgTLYwfQD8BmthooY3/PgEJ0WijiXY2ajTBGCFBGwmRII2CWOzdvMcwb8EIle8kk9mcc+89s7N3Zmmhhf8dNVzAayzjG25i104bT2AtM95gZDsM9uCZ4q3uB3cAq02M1/AT/RH7KHKfRq0NaMtwY3iHE+jGYvBHm8SX6MCpeP4euSfxFqObGXfhFvY1cEsx768wLbE35sUGrh+30VllPIi+hBuI+eMWjKdjThfZh4NVxh2ZYksZrhnWYv6R0bqqjKcVDdSI7lxiE5QL70n4VfXdyGLIxm79EgXb8DCjl+NBxHTia0Yf2mzFHzJJE6EfUhyTVF9W/4a5s/5e/jOuw0gm8Zd6k41n9PHQBiI21U9vZkqxXVNJ4mPFdQnDmcLDodXwJNGmVJ//dbgUSTM4h/bgezOFy4X1Rkx75MyEdnGrpscxh3vq3dmJ8w3FcmMmYsqLokdx3c7hWJXhEUziN+6ob+1ZzFYYpmNW/YdRw92oORke63ANK5H4SXFma7jxF4bpuB41duNzcCu4WpqOJQmXgz/zD6ZpN19J+FF4lZCDEfxiG4yfR63DCf8SFhKybKj5bTCej1q9Cb+ghRZ2Cn8AoIvx7ECbd4kAAAAASUVORK5CYII="
+                            width="20" height="20" class="me-2">
+                        <span>Admin</span>
                     </a>
                 </li>
             </ul>
@@ -208,7 +215,7 @@
                                     aria-labelledby="notification">
                                     <h6 class="dropdown-header">You have 5 unread messages</h6>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item d-flex" href="#">
+                                    <a class="dropdown-item d-flex" href="notification.html">
                                         <svg class="bi me-2 mt-3" style="cursor: pointer;" width="30" height="30">
                                             <use xlink:href="#people-circle" />
                                         </svg>
@@ -223,7 +230,7 @@
                                         </div>
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item d-flex" href="#">
+                                    <a class="dropdown-item d-flex" href="notification.html">
                                         <svg class="bi me-2 mt-3" style="cursor: pointer;" width="30" height="30">
                                             <use xlink:href="#people-circle" />
                                         </svg>
@@ -238,7 +245,7 @@
                                         </div>
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-center">See all messages</a>
+                                    <a class="dropdown-item text-center cursor" href="notification.html">See all messages</a>
                                 </div>
                             </div>
                             <div class="dropdown">
@@ -251,14 +258,14 @@
                                 <ul class="dropdown-menu dropdown-menu-start text-small shadow"
                                     aria-labelledby="triggerId">
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="profile.html">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                             Profile
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="notification.html">
                                             <span>
                                                 <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                                                 Notification
