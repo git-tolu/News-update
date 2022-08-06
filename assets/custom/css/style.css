@@ -480,4 +480,11 @@ body::-webkit-scrollbar-thumb {
     user-select: none;
 }
 
-
+.profile-share {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #e9edf4;
+    display: flex;
+    background: #fff;
+}
