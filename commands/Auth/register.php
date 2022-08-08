@@ -8,15 +8,10 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     if ($dbc->validateInput($_POST['userName'])) {
         $userName = $dbc->test_input($_POST['userName']);
-        echo json_encode([
-            'message' => $userName,
-            'status' => 200
-        ]);
-
     } else {
         http_response_code(403);
         echo json_encode([
-            'message' => 'name cannot be empty',
+            'nameerr' => 'name cannot be empty',
             'status' => 403
         ]);
         die();
@@ -27,7 +22,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     } else {
         http_response_code(403);
         echo json_encode([
-            'message' => 'email cannot be empty',
+            'emailerr' => 'email cannot be empty',
             'status' => 403
         ]);
         die();
@@ -35,13 +30,80 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     if ($dbc->validateInput($_POST['userPassword'])) {
         $userPassword = $dbc->test_input($_POST['userPassword']);
+        $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+        if ($dbc->passwordRegex($userPassword)) {
+            http_response_code(403);
+            echo json_encode([
+                'passworderr' => $dbc->passwordRegex($userPassword),
+                'status' => 403
+            ]);
+            die();
+        }
     } else {
         http_response_code(403);
         echo json_encode([
-            'message' => 'password cannot be empty',
+            'passworderr' => 'password cannot be empty',
             'status' => 403
         ]);
         die();
+    }
+
+    if ($dbc->validateInput($_POST['userConfirmPassword'])) {
+        $userConfirmPassword = $dbc->test_input($_POST['userConfirmPassword']);
+        if ($dbc->passwordRegex($userConfirmPassword)) {
+            http_response_code(403);
+            echo json_encode([
+                'confirmPassworderr' => $dbc->passwordRegex($userConfirmPassword),
+                'status' => 403
+            ]);
+            die();
+        }
+    } else {
+        http_response_code(403);
+        echo json_encode([
+            'confirmPassworderr' => 'Confirm password cannot be empty',
+            'status' => 403
+        ]);
+        die();
+    }
+
+
+    if ($dbc->emailCheck($userEmail)) {
+        http_response_code(403);
+        echo json_encode([
+            'emailerr' => 'email already exists',
+            'status' => 403
+        ]);
+        die();
+    } else {
+        if ($userPassword !== $userConfirmPassword) {
+            http_response_code(403);
+            echo json_encode([
+                'confirmPassworderr' => 'Passwords do not match',
+                'status' => 403
+            ]);
+            die();
+        } else {
+            if (!empty($userName) && !empty($userEmail) && !empty($userPassword) && !empty($userConfirmPassword)) {
+                $result = $dbc->registerUser($userName, $userEmail, $hash);
+                if ($result) {
+                    http_response_code(200);
+                    echo json_encode([
+                        'result' => 'Successfull',
+                        'status' => 200
+                    ]);
+                    die();
+                    $_SESSION['user'] = $userEmail;
+                } else {
+                    http_response_code(403);
+                    echo json_encode([
+                        'resulterr' => 'Sorry something went wrong',
+                        'status' => 403
+                    ]);
+                    die();
+                }
+            }
+        }
     }
 } else {
     echo json_encode([
