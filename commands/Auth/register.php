@@ -6,8 +6,8 @@ $dbc = new Dbc();
 
 if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
-    if ($dbc->validateInput($_POST['userName'])) {
-        $userName = $dbc->test_input($_POST['userName']);
+    if ($dbc->validateInput($_POST['newUserName'])) {
+        $newUserName = $dbc->test_input($_POST['newUserName']);
     } else {
         http_response_code(403);
         echo json_encode([
@@ -17,8 +17,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['userEmail'])) {
-        $userEmail = $dbc->test_input($_POST['userEmail']);
+    if ($dbc->validateInput($_POST['newUserEmail'])) {
+        $newUserEmail = $dbc->test_input($_POST['newUserEmail']);
     } else {
         http_response_code(403);
         echo json_encode([
@@ -28,13 +28,13 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['userPassword'])) {
-        $userPassword = $dbc->test_input($_POST['userPassword']);
-        $hash = password_hash($userPassword, PASSWORD_DEFAULT);
-        if ($dbc->passwordRegex($userPassword)) {
+    if ($dbc->validateInput($_POST['newUserPassword'])) {
+        $newUserPassword = $dbc->test_input($_POST['newUserPassword']);
+        $hash = password_hash($newUserPassword, PASSWORD_DEFAULT);
+        if ($dbc->passwordRegex($newUserPassword)) {
             http_response_code(403);
             echo json_encode([
-                'passworderr' => $dbc->passwordRegex($userPassword),
+                'passworderr' => $dbc->passwordRegex($newUserPassword),
                 'status' => 403
             ]);
             die();
@@ -48,12 +48,12 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['userConfirmPassword'])) {
-        $userConfirmPassword = $dbc->test_input($_POST['userConfirmPassword']);
-        if ($dbc->passwordRegex($userConfirmPassword)) {
+    if ($dbc->validateInput($_POST['newUserConfirmPassword'])) {
+        $newUserConfirmPassword = $dbc->test_input($_POST['newUserConfirmPassword']);
+        if ($dbc->passwordRegex($newUserConfirmPassword)) {
             http_response_code(403);
             echo json_encode([
-                'confirmPassworderr' => $dbc->passwordRegex($userConfirmPassword),
+                'confirmPassworderr' => $dbc->passwordRegex($newUserConfirmPassword),
                 'status' => 403
             ]);
             die();
@@ -68,7 +68,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     }
 
 
-    if ($dbc->emailCheck($userEmail)) {
+    if ($dbc->emailCheck($newUserEmail)) {
         http_response_code(403);
         echo json_encode([
             'emailerr' => 'email already exists',
@@ -76,7 +76,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         ]);
         die();
     } else {
-        if ($userPassword !== $userConfirmPassword) {
+        if ($newUserPassword !== $newUserConfirmPassword) {
             http_response_code(403);
             echo json_encode([
                 'confirmPassworderr' => 'Passwords do not match',
@@ -84,8 +84,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             ]);
             die();
         } else {
-            if (!empty($userName) && !empty($userEmail) && !empty($userPassword) && !empty($userConfirmPassword)) {
-                $result = $dbc->registerUser($userName, $userEmail, $hash);
+            if (!empty($newUserName) && !empty($newUserEmail) && !empty($newUserPassword) && !empty($newUserConfirmPassword)) {
+                $result = $dbc->registerUser($newUserName, $newUserEmail, $hash);
                 if ($result) {
                     http_response_code(200);
                     echo json_encode([
@@ -93,7 +93,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
                         'status' => 200
                     ]);
                     die();
-                    $_SESSION['user'] = $userEmail;
+                    $_SESSION['user'] = $newUserEmail;
                 } else {
                     http_response_code(403);
                     echo json_encode([
