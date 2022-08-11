@@ -1,0 +1,1069 @@
+
+.ff_fileupload_hidden {
+    display: none;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone_wrap {
+    position: relative;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone {
+    display: block;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    border: 2px dashed #e9edf4;
+    border-radius: 5px;
+    padding: 0;
+    background-color: #f6f6fb;
+    background-image: url("../../../media/plugin-media/fancy_upload.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.85;
+    cursor: pointer;
+    outline: none;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone::-moz-focus-inner {
+    border: 0;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone:hover,
+.ff_fileupload_wrap .ff_fileupload_dropzone:focus,
+.ff_fileupload_wrap .ff_fileupload_dropzone:active {
+    opacity: 1;
+    background-color: #fff;
+    border-color: #f3f4f7;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone_tools {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone_tool {
+    display: block;
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #efecec;
+    border-radius: 3px;
+    padding: 0;
+    background-color: #fdfdfd;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.85;
+    cursor: pointer;
+    outline: none;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone_tool::-moz-focus-inner {
+    border: 0;
+}
+
+.ff_fileupload_wrap .ff_fileupload_dropzone_tool:hover,
+.ff_fileupload_wrap .ff_fileupload_dropzone_tool:focus,
+.ff_fileupload_wrap .ff_fileupload_dropzone_tool:active {
+    opacity: 1;
+    background-color: #ffffff;
+    border-color: #4e4c73;
+}
+
+.ff_fileupload_wrap .ff_fileupload_recordaudio {
+    background-image: url("../../../media/plugin-media/fancy_microphone.png");
+}
+
+.ff_fileupload_wrap .ff_fileupload_recordvideo {
+    background-image: url("../../../media/plugin-media/fancy_webcam.png");
+}
+
+.ff_fileupload_wrap .ff_fileupload_recordvideo_preview {
+    position: absolute;
+    display: block;
+    right: 60px;
+    top: 10px;
+    width: 320px;
+    max-width: calc(100% - 70px);
+    height: calc(100% - 20px);
+    background-color: #222222;
+}
+
+.ff_fileupload_wrap .ff_fileupload_recordvideo_preview.ff_fileupload_hidden {
+    display: none;
+}
+
+.ff_fileupload_wrap .ff_fileupload_recording {
+    animation: ff_fileupload_recording_animate 1.2s infinite alternate;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads {
+    width: 100%;
+    border-collapse: collapse !important;
+    border: 0 none;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads tr {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    vertical-align: top;
+    padding: 1em 0;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads tr.ff_fileupload_bounce {
+    animation: ff_fileupload_bounce_animate 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translateY(0);
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview {
+    width: 1px;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image {
+    display: block;
+    box-sizing: border-box;
+    border: 0 none;
+    padding: 0;
+    background-color: #f3f4f7;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    opacity: 0.75;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    outline: none;
+    cursor: default;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image::-moz-focus-inner {
+    border: 0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image_has_preview {
+    cursor: pointer;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image:hover,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image:focus,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image:active {
+    opacity: 1;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    overflow: hidden;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button {
+    display: inline-block;
+    vertical-align: top;
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    border: 1px solid #e9edf4;
+    border-radius: 3px;
+    padding: 0;
+    background-color: #f6f6fb;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.85;
+    cursor: pointer;
+    outline: none;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button::-moz-focus-inner {
+    border: 0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button:hover,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button:focus,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button:active {
+    opacity: 1;
+    background-color: #fdfdfd;
+    border-color: #e9edf4;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions button.ff_fileupload_start_upload {
+    margin-right: 0.5em;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile {
+    display: none;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile button {
+    display: block;
+    margin-top: 0.3em;
+    width: 100%;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid #efecec;
+    border-radius: 3px;
+    padding: 0;
+    background-color: #f3f3f3;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.85;
+    cursor: pointer;
+    outline: none;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile button::-moz-focus-inner {
+    border: 0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile button:hover,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile button:focus,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile button:active {
+    opacity: 1;
+    background-color: #fdfdfd;
+    border-color: #4e4c73;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads button.ff_fileupload_start_upload {
+    background-image: url("../../../media/plugin-media/fancy_okay.png");
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads button.ff_fileupload_remove_file {
+    background-image: url("../../../media/plugin-media/fancy_remove.png");
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_with_color {
+    color: #ffffff;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_a {
+    background-color: #f03c3c;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_b {
+    background-color: #f05a3c;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_c {
+    background-color: #f0783c;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_d {
+    background-color: #f0963c;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_e {
+    background-color: #e0862b;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_f {
+    background-color: #dca12b;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_g {
+    background-color: #c7ab1e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_h {
+    background-color: #c7c71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_i {
+    background-color: #abc71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_j {
+    background-color: #8fc71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_k {
+    background-color: #72c71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_l {
+    background-color: #56c71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_m {
+    background-color: #3ac71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_n {
+    background-color: #1ec71e;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_o {
+    background-color: #1ec73a;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_p {
+    background-color: #1ec756;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_q {
+    background-color: #1ec78f;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_r {
+    background-color: #1ec7ab;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_s {
+    background-color: #1ec7c7;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_t {
+    background-color: #1eabc7;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_u {
+    background-color: #1e8fc7;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_v {
+    background-color: #1e72c7;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_w {
+    background-color: #3c78f0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_x {
+    background-color: #3c5af0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_y {
+    background-color: #3c3cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_z {
+    background-color: #5a3cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_0 {
+    background-color: #783cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_1 {
+    background-color: #963cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_2 {
+    background-color: #b43cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_3 {
+    background-color: #d23cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_4 {
+    background-color: #f03cf0;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_5 {
+    background-color: #f03cd2;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_6 {
+    background-color: #f03cb4;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_7 {
+    background-color: #f03c96;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_8 {
+    background-color: #f03c78;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_text_9 {
+    background-color: #f03c5a;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary {
+    padding: 1em;
+    font-size: 0.9em;
+    white-space: normal;
+    color: #7f88a5;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_filename {
+    width: 100%;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_filename input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em 0;
+    margin-bottom: 0.1em;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: normal;
+    border: 0px solid #e8ebf3;
+    border-radius: 0;
+    box-shadow: none;
+    /* color: #080e1b; */
+    font-weight: 600;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_filename input:focus,
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_filename input:hover {
+    border: 0px solid #e8ebf3;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_errors {
+    color: #a94442;
+    font-weight: bold;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_progress_background {
+    margin-top: 0.5em;
+    background-color: #cccccc;
+    height: 2px;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary .ff_fileupload_progress_bar {
+    background-color: #4e4c73;
+    width: 0;
+    height: 2px;
+}
+
+.ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions {
+    width: 1px;
+    text-align: right;
+}
+
+@keyframes ff_fileupload_recording_animate {
+    from {
+        border-color: #ef1f1f;
+    }
+
+    to {
+        border-color: #c9a1a1;
+    }
+}
+
+@keyframes ff_fileupload_bounce_animate {
+
+    10%,
+    90% {
+        transform: translateY(-1px);
+    }
+
+    20%,
+    80% {
+        transform: translateY(2px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateY(-3px);
+    }
+
+    40%,
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+/* Colored buttons based on file extension for non-images. */
+@media (max-width: 420px) {
+    .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_preview_image {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_summary {
+        padding-right: 0;
+    }
+
+    .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_actions {
+        display: none;
+    }
+
+    .ff_fileupload_wrap table.ff_fileupload_uploads td.ff_fileupload_preview .ff_fileupload_actions_mobile {
+        display: block;
+    }
+}
+
+.ff_fileupload_dialog_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+}
+
+.ff_fileupload_dialog_main {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+}
+
+.ff_fileupload_dialog_main img {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ff_fileupload_dialog_main audio {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    width: 100%;
+}
+
+.ff_fileupload_dialog_main video {
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*!
+ * =============================================================
+ * dropify v0.2.2 - Override your input files with style.
+ * https://github.com/JeremyFagis/dropify
+ *
+ * (c) 2017 - Jeremy FAGIS <jeremy@fagis.fr> (http://fagis.fr)
+ * =============================================================
+ */
+@font-face {
+    font-family: "dropify";
+    src: url("../../../plugins/fileuploads/fonts/dropify.eot");
+    src: url("../../../plugins/fileuploads/fonts/dropify.eot#iefix") format("embedded-opentype"), url("../../../plugins/fileuploads/fonts/dropify.woff") format("woff"), url("../plugins/fileuploads/fonts/dropify.ttf") format("truetype"), url("../plugins/fileuploads/fonts/dropify.svg#dropify") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^=dropify-font-]:before,
+[class*=" dropify-font-"]:before,
+.dropify-font:before,
+.dropify-wrapper .dropify-message span.file-icon:before {
+    font-family: "dropify";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+
+.dropify-font-upload:before,
+.dropify-wrapper .dropify-message span.file-icon:before {
+    content: "\e800";
+    color: var(--primary-bg-color);
+}
+
+.dropify-font-file:before {
+    content: "\e801";
+}
+
+.dropify-wrapper {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000;
+    background-color: #fff;
+    background-image: none;
+    text-align: center;
+    border: 1px solid #e9edf4;
+    -webkit-transition: border-color 0.15s linear;
+    transition: border-color 0.15s linear;
+    border-radius: 7px;
+}
+
+.dropify-wrapper:hover {
+    background-size: 30px 30px;
+    background-image: -webkit-linear-gradient(135deg, #f6f6fb 25%, transparent 25%, transparent 50%, #f6f6fb 50%, #f6f6fb 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, #f6f6fb 25%, transparent 25%, transparent 50%, #f6f6fb 50%, #f6f6fb 75%, transparent 75%, transparent);
+    -webkit-animation: stripes 2s linear infinite;
+    animation: stripes 2s linear infinite;
+}
+
+.dropify-wrapper.has-preview .dropify-clear {
+    display: block;
+}
+
+.dropify-wrapper.has-error {
+    border-color: #f34141;
+}
+
+.dropify-wrapper.has-error .dropify-message .dropify-error {
+    display: block;
+}
+
+.dropify-wrapper.has-error:hover .dropify-errors-container {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.dropify-wrapper.disabled input {
+    cursor: not-allowed;
+}
+
+.dropify-wrapper.disabled:hover {
+    background-image: none;
+    -webkit-animation: none;
+    animation: none;
+}
+
+.dropify-wrapper.disabled .dropify-message {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.dropify-wrapper.disabled .dropify-infos-message {
+    display: none;
+}
+
+.dropify-wrapper input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.dropify-wrapper .dropify-message {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dropify-wrapper .dropify-message span.file-icon {
+    font-size: 50px;
+    color: #76839a;
+}
+
+.dropify-wrapper .dropify-message p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.dropify-wrapper .dropify-message p.dropify-error {
+    color: #f34141;
+    font-weight: bold;
+    display: none;
+}
+
+.dropify-wrapper .dropify-clear {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 7;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial";
+    font-size: 11px;
+    padding: 4px 8px;
+    font-weight: bold;
+    color: #fff;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.dropify-wrapper .dropify-clear:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.dropify-wrapper .dropify-preview {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dropify-wrapper .dropify-preview .dropify-render img {
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    -webkit-transition: border-color 0.15s linear;
+    transition: border-color 0.15s linear;
+}
+
+.dropify-wrapper .dropify-preview .dropify-render i {
+    font-size: 70px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #777;
+}
+
+.dropify-wrapper .dropify-preview .dropify-render .dropify-extension {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    font-size: 13px;
+    width: 42px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropify-wrapper .dropify-preview .dropify-infos {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+}
+
+.dropify-wrapper .dropify-preview .dropify-infos .dropify-infos-inner {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -40%);
+    transform: translate(0, -40%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    padding: 0 20px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.dropify-wrapper .dropify-preview .dropify-infos .dropify-infos-inner p {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.dropify-wrapper .dropify-preview .dropify-infos .dropify-infos-inner p.dropify-infos-message {
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 12px;
+    position: relative;
+    opacity: 0.5;
+}
+
+.dropify-wrapper .dropify-preview .dropify-infos .dropify-infos-inner p.dropify-infos-message::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background: #fff;
+    width: 30px;
+    height: 2px;
+}
+
+.dropify-wrapper:hover .dropify-clear {
+    opacity: 1;
+}
+
+.dropify-wrapper:hover .dropify-preview .dropify-infos {
+    opacity: 1;
+}
+
+.dropify-wrapper:hover .dropify-preview .dropify-infos .dropify-infos-inner {
+    margin-top: -5px;
+}
+
+.dropify-wrapper.touch-fallback {
+    height: auto !important;
+}
+
+.dropify-wrapper.touch-fallback:hover {
+    background-image: none;
+    -webkit-animation: none;
+    animation: none;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview {
+    position: relative;
+    padding: 0;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-render {
+    display: block;
+    position: relative;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-render .dropify-font-file {
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    top: 0;
+    left: 0;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-render .dropify-font-file::before {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-render img {
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos {
+    position: relative;
+    opacity: 1;
+    background: transparent;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner {
+    position: relative;
+    top: 0;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    padding: 5px 90px 5px 0;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner p {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #777;
+    text-align: left;
+    line-height: 25px;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner p.dropify-filename {
+    font-weight: bold;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner p.dropify-infos-message {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 11px;
+    position: relative;
+    opacity: 1;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner p.dropify-infos-message::before {
+    display: none;
+}
+
+.dropify-wrapper.touch-fallback .dropify-message {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    padding: 40px 0;
+}
+
+.dropify-wrapper.touch-fallback .dropify-clear {
+    top: auto;
+    bottom: 23px;
+    opacity: 1;
+    border-color: rgba(119, 119, 119, 0.7);
+    color: #777;
+}
+
+.dropify-wrapper.touch-fallback.has-preview .dropify-message {
+    display: none;
+}
+
+.dropify-wrapper.touch-fallback:hover .dropify-preview .dropify-infos .dropify-infos-inner {
+    margin-top: 0;
+}
+
+.dropify-wrapper .dropify-loader {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: none;
+    z-index: 9;
+}
+
+.dropify-wrapper .dropify-loader::after {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: rotate 0.6s linear infinite;
+    animation: rotate 0.6s linear infinite;
+    border-radius: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #777;
+    content: "";
+}
+
+.dropify-wrapper .dropify-errors-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background: rgba(243, 65, 65, 0.8);
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s linear 0.15s, opacity 0.15s linear;
+    transition: visibility 0s linear 0.15s, opacity 0.15s linear;
+}
+
+.dropify-wrapper .dropify-errors-container ul {
+    padding: 10px 20px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dropify-wrapper .dropify-errors-container ul li {
+    margin-left: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dropify-wrapper .dropify-errors-container.visible {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.dropify-wrapper~.dropify-errors-container ul {
+    padding: 0;
+    margin: 15px 0;
+}
+
+.dropify-wrapper~.dropify-errors-container ul li {
+    margin-left: 20px;
+    color: #f34141;
+    font-weight: bold;
+}
+
+@-webkit-keyframes stripes {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 60px 30px;
+    }
+}
+
+@keyframes stripes {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 60px 30px;
+    }
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotateZ(-360deg);
+        transform: rotateZ(-360deg);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+}
+
+.dropify-wrapper.has-preview .dropify-message {
+    display: none;
+}
