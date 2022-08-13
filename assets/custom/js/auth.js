@@ -35,15 +35,22 @@ $(function () {
     // axios- third party javascript library
 
     // jquery
-    $.ajax({
-        type: "POST",
-        // contentType: "application/json; charset=utf-8",
-        // dataType: "json",
-        url: "http://localhost/News-update/userDashboard/index.html",
-        // data: $("#register").serialize() ,
-        success: function (response) {
-            // data = JSON.parse(response)
-            console.log(response)
-        }
+    $("#registerBTN").click(function (e) { 
+        e.preventDefault();
+        $.ajax({
+            Headers : {
+                contentType: "application/json",
+                AccessControlAllowOrigin: "*"
+
+            },
+            url: "http://localhost/News-update/commands/Auth/register.php",
+            type: "POST",
+            data: $("#register").serialize() ,
+            dataType: "json",
+            success: function (response) {
+                // data = JSON.parse(response)
+                console.log(response)
+            }
+        });
     });
 });
