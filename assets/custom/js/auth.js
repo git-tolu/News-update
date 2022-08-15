@@ -35,27 +35,6 @@ $(function () {
         }
     });
 
-    // fetch api
-    // fetch("http://localhost/News-update/commands/Auth/register.php").then(
-    //     response=>{
-    //        return response.json()
-    //     }
-    // ).then(json=>{
-    //     console.log(json)
-    // })
-    // async method
-    // async function getUsers(){
-    //     let response = await fetch("http://localhost/News-update/commands/Auth/register.php")
-    //     let data = await response.json() 
-    //     return data
-    // }
-
-    // getUsers().then(response=>{
-    //     console.log(response)
-    // })
-
-    // axios- third party javascript library
-
     // jquery
     // $("#registerBTN").click(function (e) {
     //     e.preventDefault();
