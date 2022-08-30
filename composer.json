@@ -1,0 +1,16 @@
+{
+    "name": "vendor/composer",
+    "description": "development of api with jwt",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Composer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "git-tolu",
+            "email": "adejumobitoluwanimi2@gmail.com"
+        }
+    ],
+    "require": {}
+}
