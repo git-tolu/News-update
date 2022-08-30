@@ -3,6 +3,7 @@
 require "../models/apipost.php";
 require "../models/dbc.php";
 
+
 $dbc = new Dbc();
 
 if (($_SERVER['REQUEST_METHOD']) === 'POST') {
@@ -14,7 +15,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             'nameerr' => 'name cannot be empty',
             'status' => 403
         ]);
-       
+
         die();
     }
 
@@ -32,7 +33,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         $newUserPassword = $dbc->test_input($_POST['newUserPassword']);
         $hash = password_hash($newUserPassword, PASSWORD_DEFAULT);
         if ($dbc->passwordRegex($newUserPassword)) {
-                echo json_encode([
+            echo json_encode([
                 'passworderr' => $dbc->passwordRegex($newUserPassword),
                 'status' => 403
             ]);
@@ -49,7 +50,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     if ($dbc->validateInput($_POST['newUserConfirmPassword'])) {
         $newUserConfirmPassword = $dbc->test_input($_POST['newUserConfirmPassword']);
         if ($dbc->passwordRegex($newUserConfirmPassword)) {
-                echo json_encode([
+            echo json_encode([
                 'confirmPassworderr' => $dbc->passwordRegex($newUserConfirmPassword),
                 'status' => 403
             ]);
@@ -72,7 +73,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     } else {
         if ($newUserPassword !== $newUserConfirmPassword) {
-                echo json_encode([
+            echo json_encode([
                 'confirmPassworderr' => 'Passwords do not match',
                 'status' => 403
             ]);
@@ -81,14 +82,14 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             if (!empty($newUserName) && !empty($newUserEmail) && !empty($newUserPassword) && !empty($newUserConfirmPassword)) {
                 $result = $dbc->registerUser($newUserName, $newUserEmail, $hash);
                 if ($result) {
-                    $_SESSION['user'] = $newUserEmail;
+                    $_SESSION['ourUser'] = $newUserEmail;
                     echo json_encode([
                         'result' => 'Successfull',
                         'status' => 200
                     ]);
                     die();
                 } else {
-                                echo json_encode([
+                    echo json_encode([
                         'resulterr' => 'Sorry something went wrong',
                         'status' => 403
                     ]);
