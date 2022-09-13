@@ -37,14 +37,17 @@ class Dbc extends Database
 
     public function passwordRegex($password)
     {
-        $uppercase = preg_match('@[A-Z]@', $password);
+        // $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
         $specialChars = preg_match('@[^\w]@', $password);
     
-        if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 6) {
+        if (!$lowercase || !$number || !$specialChars || strlen($password) < 6) {
             return "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
         }
+        // if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 6) {
+        //     return "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
+        // }
     }
 
     public function login($email)
@@ -97,9 +100,14 @@ class Dbc extends Database
         ]);
         return true;
     }
-
-    public function insert($param,){
-        $sql="INSERT INTO  users ($param) VALUES (:userName, :userEmail, :userPassword)";
+    
+    public function Delete($table, $id)
+    {
+        $sql = "DELETE FROM $table WHERE id=$id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return true;
     }
+
 
 }
