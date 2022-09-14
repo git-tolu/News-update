@@ -25,7 +25,7 @@ class Dbc extends Database
 
     public function emailCheck($email)
     {
-        $sql = "SELECT userEmail FROM users WHERE userEmail = :email";
+        $sql = "SELECT * FROM users WHERE userEmail = :email";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             "email" => $email
@@ -52,7 +52,7 @@ class Dbc extends Database
 
     public function login($email)
     {
-        $sql = "SELECT userEmail, userPassword FROM users WHERE userEmail = :email";
+        $sql = "SELECT * FROM users WHERE userEmail = :email";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             "email" => $email
@@ -103,7 +103,14 @@ class Dbc extends Database
     
     public function Delete($table, $id)
     {
-        $sql = "DELETE FROM $table WHERE id=$id";
+        $sql = "DELETE FROM $table WHERE id = $id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return true;
+    }
+
+    public function Status($table, $status, $id){
+        $sql = "UPDATE $table SET status = $status WHERE id = $id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return true;
