@@ -92,10 +92,14 @@
     <script src="../assets/plugins/glightbox/js/glightbox.min.js"></script>
     <script src="../assets/plugins/swiper/swiper-bundle.min.js"></script>
 
+    <!-- sweet alert -->
+    <script src="../assets/bootstrap/js/sweet.js"></script>
+
     <!--  Custom js -->
     <script src="../assets/custom/js/custom.js"></script>
     <script src="../assets/custom/js/main.js"></script>
     <script src="../assets/custom/js/validate.js"></script>
+    <script src="../assets/custom/js/auth.js"></script>
 
 </body>
 

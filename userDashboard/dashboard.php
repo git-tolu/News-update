@@ -20,7 +20,7 @@ include "../commands/models/session.php";
 
     <!-- OWl carousel css -->
     <link href="../assets/plugins/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/plugins/owl.carousel/owl.theme.default.css" rel="stylesheet" yype="text/css" />
+    <link href="../assets/plugins/owl.carousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
     <!-- Transition css -->
     <link rel="stylesheet" href="../assets/plugins/aos/aos.css">
     <link href="../assets/plugins/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -92,7 +92,7 @@ include "../commands/models/session.php";
     </svg>
     <!-- ==== end svg ==== -->
     <!-- ==== coontent ==== -->
-    <div class="main-container d-flex">
+    <div class="main-container d-flex" style="width: 100%;">
         <!-- ==== sidebar ==== -->
         <!-- ==== full sidebar ==== -->
             <?php $page = "dashboard"; include "includes/sidebar.php"; ?>
@@ -221,12 +221,14 @@ include "../commands/models/session.php";
                                                         <div class="form-group">
                                                             <label class="form-label">Blog Title<span class="text-red">*</span></label>
                                                             <input type="text" name="blog_title" class="form-control" placeholder="Title of post">
+                                                            <span class="text-danger" id="titleerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
                                                             <label class="form-label">Author<span class="text-red">*</span></label>
                                                             <input type="text" name="blog_Author" class="form-control" placeholder="name of Author">
+                                                            <span class="text-danger" id="authorerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
@@ -240,11 +242,13 @@ include "../commands/models/session.php";
                                                                 <option value="UI/UX">UI/UX</option>
                                                                 <option value="technology">Technology</option>
                                                             </select>
+                                                            <span class="text-danger" id="categoryerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label class="form-label">Cover image <span class="text-red">*</span></label>
                                                         <input type="file" name="blog_media" class="dropify" data-bs-height="180" />
+                                                        <span class="text-danger" id="coverimageerr"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -255,6 +259,7 @@ include "../commands/models/session.php";
                                                             </div>
                                                             <div class="card-body">
                                                                 <textarea name="blog_content" class="editor" id="">Write your blog content here</textarea>
+                                                                <span class="text-danger" id="contenterr"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -264,6 +269,7 @@ include "../commands/models/session.php";
                                         <div class="modal-footer text-center justify-content-center d-flex align-items-center">
                                             <button id="blogBtn" type="submit" class="btn btn-primary"> Post Blog
                                             </button>
+                                            
                                             <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </form>
@@ -445,6 +451,7 @@ include "../commands/models/session.php";
 
     <!--  Custom js -->
     <script src="../assets/custom/js/dashboard.js"></script>
+    <script src="../assets/custom/js/upload.js"></script>
 </body>
 
 </html>

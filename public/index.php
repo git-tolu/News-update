@@ -929,7 +929,7 @@
                 <div class="new-inner mt-3">
                     <div class="card shadow" data-aos="fade-zoom" data-aos-delay="600">
                         <div class="card-header">
-                            <img class="card-img-top" src="/media/landing/concept-blogging_88465-58.webp" alt="">
+                            <img class="card-img-top" src="../media/landing/concept-blogging_88465-58.webp" alt="">
                         </div>
                         <div class="card-body">
                             <div class="category bg-primary p-2 text-center m-2">Sports</div>
