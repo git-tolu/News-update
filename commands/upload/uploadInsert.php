@@ -8,8 +8,13 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     $sess = $_SESSION['ourUser'];
     $sessionSelect = $dbc->sessionSelect($sess);
     $uid = $sessionSelect['id'];
-    if ($dbc->validateInput($_POST['title'])) {
-        $title = $dbc->test_input($_POST['title']);
+    echo json_encode([
+        'message' => $uid,
+        'status' => 403
+    ]);
+
+    if ($dbc->validateInput($_POST['blog_title'])) {
+        $title = $dbc->test_input($_POST['blog_title']);
     } else {
         echo json_encode([
             'titleerr' => 'title cannot be empty',
@@ -18,8 +23,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['author'])) {
-        $author = $dbc->test_input($_POST['author']);
+    if ($dbc->validateInput($_POST['blog_Author'])) {
+        $author = $dbc->test_input($_POST['blog_Author']);
     } else {
         echo json_encode([
             'authorerr' => 'author cannot be empty',
@@ -28,8 +33,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['category'])) {
-        $category = $dbc->test_input($_POST['category']);
+    if ($dbc->validateInput($_POST['blog_category'])) {
+        $category = $dbc->test_input($_POST['blog_category']);
     } else {
         echo json_encode([
             'categoryerr' => 'category cannot be empty',
@@ -38,8 +43,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_FILES['coverimage']['name'])) {
-        $coverimage = $dbc->test_input($_FILES['coverimage']['name']);
+    if ($dbc->validateInput($_FILES['blog_media']['name'])) {
+        $coverimage = $dbc->test_input($_FILES['blog_media']['name']);
     } else {
         echo json_encode([
             'coverimageerr' => 'coverimage cannot be empty',
@@ -48,11 +53,11 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['content'])) {
-        $content = $dbc->test_input($_POST['content']);
+    if ($dbc->validateInput($_POST['blog_content'])) {
+        $content = $dbc->test_input($_POST['blog_content']);
     } else {
         echo json_encode([
-            'content' => 'textarea cannot be empty',
+            'contenterr' => 'textarea cannot be empty',
             'status' => 403
         ]);
     }
