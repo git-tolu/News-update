@@ -115,6 +115,29 @@ class Dbc extends Database
         $stmt->execute();
         return true;
     }
-
-
+    
+    public function UploadAll($id)
+    {
+        $sql = "SELECT * FROM upload WHERE uid=$id ";
+        $stmt= $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // return json_encode($row);
+        return $row;
+    }
+    
+    public function imageValidation($img)
+    {
+        $file_ext = pathinfo($img, PATHINFO_EXTENSION);
+        $extensions = array("jpeg", "jpg", "png", "svg", "webp");
+        $result = in_array($file_ext, $extensions);
+        return $result;
+    }
+    public function videoValidation($img)
+    {
+        $file_ext = pathinfo($img, PATHINFO_EXTENSION);
+        $extensions = array("mp3", "mp4");
+        $result = in_array($file_ext, $extensions);
+        return $result;
+    }
 }

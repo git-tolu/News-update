@@ -11,13 +11,15 @@ $(function(e) {
 
 
     //______Basic Data Table
-    $('#responsive-datatable').DataTable({
-        language: {
-            searchPlaceholder: 'Search...',
-            scrollX: "100%",
-            sSearch: '',
-        }
-    });
+    // $('#responsive-datatable').DataTable({
+    //     language: {
+    //         searchPlaceholder: 'Search...',
+    //         scrollX: "100%",
+    //         sSearch: '',
+    //     },
+
+    // });
+
     $('#responsive-datatable2').DataTable({
         language: {
             searchPlaceholder: 'Search...',

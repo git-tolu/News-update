@@ -8,10 +8,10 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     $sess = $_SESSION['ourUser'];
     $sessionSelect = $dbc->sessionSelect($sess);
     $uid = $sessionSelect['id'];
-    echo json_encode([
-        'message' => $uid,
-        'status' => 403
-    ]);
+    // echo json_encode([
+    //     'message' => $uid,
+    //     'status' => 403
+    // ]);
 
     if ($dbc->validateInput($_POST['blog_title'])) {
         $title = $dbc->test_input($_POST['blog_title']);
@@ -54,7 +54,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     }
 
     if ($dbc->validateInput($_POST['blog_content'])) {
-        $content = $dbc->test_input($_POST['blog_content']);
+        $content = html_entity_decode($dbc->test_input($_POST['blog_content']));
     } else {
         echo json_encode([
             'contenterr' => 'textarea cannot be empty',
@@ -65,7 +65,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     if (!empty($title) && !empty($author) && !empty($category) && !empty($coverimage) && !empty($content)) {
         $folder = '../uploadMedia/';
         $newImage =  time() . '_' . rand(500000, 500000000000) . $coverimage;
-        move_uploaded_file($_FILES['coverimage']['tmp_name'], $folder . $newImage);
+        move_uploaded_file($_FILES['blog_media']['tmp_name'], $folder . $newImage);
         $result = $dbc->upload($uid, $title, $author, $category, $newImage, $content);
         if ($result) {
             // $_SESSION['ourUser'] = $newUserEmail;
@@ -76,7 +76,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             die();
         } else {
             echo json_encode([
-                'resulterr' => 'Sorry something went wrong',
+                'result' => 'Sorry something went wrong',
                 'status' => 403
             ]);
             die();
