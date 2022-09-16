@@ -138,52 +138,7 @@ include "../commands/models/session.php";
                                                 <th class="wd-25p border-bottom-0">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Bella</td>
-                                                <td>Chloe</td>
-                                                <td>System Developer</td>
-                                                <td>2018/03/12</td>
-                                                <td>$654,765</td>
-                                                <td>b.Chloe@datatables.net</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                                <td>
-                                                    <!-- Edit modal btn -->
-                                                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                        <i class="fa fa-pencil" aria-hidden="true"></i> </button>
-                                                    <!-- view modal btn -->
-                                                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#viewModal">
-                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                    </button>
-                                                    <!-- Delete  btn -->
-                                                    <button type="button" name="" id="" class="btn btn-danger btn-lg btn-block">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Donna</td>
-                                                <td>Bond</td>
-                                                <td>Account Manager</td>
-                                                <td>2012/02/21</td>
-                                                <td>$543,654</td>
-                                                <td>d.bond@datatables.net</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                                <td>
-                                                    <!-- Edit modal btn -->
-                                                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                        <i class="fa fa-pencil" aria-hidden="true"></i> </button>
-                                                    </button>
-                                                    <!-- view modal btn -->
-                                                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#viewModal">
-                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                    </button>
-                                                    <!-- Delete  btn -->
-                                                    <button type="button" name="" id="" class="btn btn-danger btn-lg btn-block">
-                                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                        <tbody class="uploads">
                                         </tbody>
                                     </table>
                                 </div>
@@ -247,7 +202,7 @@ include "../commands/models/session.php";
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label class="form-label">Cover image <span class="text-red">*</span></label>
-                                                        <input type="file" name="blog_media" class="dropify" data-bs-height="180" />
+                                                        <input type="file" name="blog_media" class="dropify" accept="image/*,video/*" data-bs-height="180" />
                                                         <span class="text-danger" id="coverimageerr"></span>
                                                     </div>
                                                 </div>
@@ -267,9 +222,7 @@ include "../commands/models/session.php";
                                             </div>
                                         </div>
                                         <div class="modal-footer text-center justify-content-center d-flex align-items-center">
-                                            <button id="blogBtn" type="submit" class="btn btn-primary"> Post Blog
-                                            </button>
-                                            
+                                            <button id="blogBtn" type="submit" class="btn btn-primary"> Post Blog </button>
                                             <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </form>
@@ -448,6 +401,9 @@ include "../commands/models/session.php";
     <!-- INTERNAL WYSIWYG Editor JS -->
     <script src="../assets/plugins/wysiwyag/jquery.richtext.js"></script>
     <script src="../assets/plugins/wysiwyag/wysiwyag.js"></script>
+
+    <!-- sweet alert -->
+    <script src="../assets/bootstrap/js/sweet.js"></script>
 
     <!--  Custom js -->
     <script src="../assets/custom/js/dashboard.js"></script>
