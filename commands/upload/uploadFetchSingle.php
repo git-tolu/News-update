@@ -5,8 +5,8 @@ require_once "../models/session.php";
 $dbc = new Dbc();
 
 if (($_SERVER['REQUEST_METHOD']) === 'GET') {
-    if ($dbc->validateInput($_POST['fetchId'])) {
-        $fetchId = $dbc->test_input($_POST['fetchId']);
+    if ($dbc->validateInput($_GET['fetchId'])) {
+        $fetchId = $dbc->test_input($_GET['fetchId']);
     } else {
         echo json_encode([
             'fetchIderr' => 'fetchId cannot be empty',

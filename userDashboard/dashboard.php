@@ -16,7 +16,7 @@ include "../commands/models/session.php";
     <link rel="stylesheet" href="../assets/custom/css/dashboard.css">
     <link rel="stylesheet" href="../assets/plugins/dropify-master/dropify-master/dist/css/dropify.min.css">
     <link rel="stylesheet" href="../assets/custom/css/datatables.css">
-    <link rel="stylesheet" href="../assets/custom/css/editor.css">
+    <link rel="stylesheet" href="../assets/plugins/summernote-0.8.18-dist/summernote-lite.min.css">
 
     <!-- OWl carousel css -->
     <link href="../assets/plugins/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
@@ -215,7 +215,7 @@ include "../commands/models/session.php";
                                                                 <h3 class="card-title">Blog Content</h3>
                                                             </div>
                                                             <div class="card-body">
-                                                                <textarea name="blog_content" class="editor" id="">Write your blog content here</textarea>
+                                                                <textarea name="blog_content" id="summernote" >Write your blog content here</textarea>
                                                                 <span class="text-danger" id="contenterr"></span>
                                                             </div>
                                                         </div>
@@ -294,7 +294,7 @@ include "../commands/models/session.php";
                                                                 <h3 class="card-title">Blog Content</h3>
                                                             </div>
                                                             <div class="card-body">
-                                                                <textarea name="blog_content" class="editor2" id="">Write your blog content here</textarea>
+                                                                <textarea name="blog_content" id="summernote2" >Write your blog content here</textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -401,8 +401,8 @@ include "../commands/models/session.php";
     <script src="../assets/plugins/dropify-master/dropify-master/dist/js/customDropify.js"></script>
 
     <!-- INTERNAL WYSIWYG Editor JS -->
-    <script src="../assets/plugins/wysiwyag/jquery.richtext.js"></script>
-    <script src="../assets/plugins/wysiwyag/wysiwyag.js"></script>
+    <script src="../assets/plugins/summernote-0.8.18-dist/summernote-lite.min.js"></script>
+    <!-- <script src="../assets/plugins/summernote-0.8.18-dist/customSummer.js"></script> -->
 
     <!-- sweet alert -->
     <script src="../assets/bootstrap/js/sweet.js"></script>
@@ -410,6 +410,13 @@ include "../commands/models/session.php";
     <!--  Custom js -->
     <script src="../assets/custom/js/dashboard.js"></script>
     <script src="../assets/custom/js/upload.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('#summernote').summernote();
+          $('#summernote2').summernote();
+      });
+    </script>
+  
 </body>
 
 </html>

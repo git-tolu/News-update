@@ -1,4 +1,4 @@
 $(function () {
     
-    $('.editor').summernote();
+    $('#editor').summernote();
 });
