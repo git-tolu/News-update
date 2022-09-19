@@ -5,8 +5,8 @@ require_once "../models/dbc.php";
 $dbc = new Dbc();
 if(($_SERVER['REQUEST_METHOD']) === 'POST'){
 
-    if ($dbc->validateInput($_POST['id'])) {
-        $id = $dbc->test_input($_POST['id']);
+    if ($dbc->validateInput($_POST['deleteUpload'])) {
+        $id = $dbc->test_input($_POST['deleteUpload']);
     } else {
        echo json_encode([
         'iderr'=>'id cannot be empty',
@@ -33,7 +33,7 @@ if(($_SERVER['REQUEST_METHOD']) === 'POST'){
             ]);
         }else{
             echo json_encode([
-                'resulterr' => 'Something Went Wrong',
+                'result' => 'Something Went Wrong',
                 'status' => 200
             ]);
         }

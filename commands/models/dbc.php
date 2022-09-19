@@ -116,13 +116,21 @@ class Dbc extends Database
         return true;
     }
     
-    public function UploadAll($id)
+    public function UploadFetchAll($id)
     {
         $sql = "SELECT * FROM upload WHERE uid=$id ";
         $stmt= $this->conn->prepare($sql);
         $stmt->execute();
         $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // return json_encode($row);
+        return $row;
+    }
+
+    public function UploadFetchSingle($id)
+    {
+        $sql = "SELECT * FROM upload WHERE id = $id ";
+        $stmt= $this->conn->prepare($sql);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
     

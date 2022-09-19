@@ -1,27 +1,4 @@
 $(function () {
-    // $("#blog").submit(function (e) {
-    //     e.preventDefault();
-    //     $("#blogBtn").html('<div class="spinner-border text-white mx-4"></div>');
-    //     // $("#blogBtn").attr('disabled', 'true');
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "http://localhost/News-update/commands/upload/uploadInsert.php",
-    //         processData: false,
-    //         contentType: false,
-    //         cache: false,
-    //         data: new FormData(this),
-    //         success: function (response) {
-    //             console.log(response);
-    //             console.log(message.response)
-    //             $("#titleerr").text(response.titleerr + ' *');
-    //             $("#authorerr").text(response.authorerr + ' *');
-    //             $("#categoryerr").text(response.categoryerr + ' *');
-    //             $("#coverimageerr").text(response.coverimageerr + ' *');
-    //             $("#contenterr").text(response.contenterr + ' *');
-    //         }
-    //     });
-    // });
-
     // register api httprequest
     $("#blog").submit(function (e) {
         e.preventDefault();
@@ -32,9 +9,13 @@ $(function () {
         request.send(formData)
 
         request.onload = () => {
-            // console.log(request)
-            data = JSON.parse(request.response);
-            if (data.result) {
+            $("#blogBtn").html('<div class="spinner-border text-white mx-4"></div>');
+            $("#blogBtn").attr('disabled', 'true');
+        // console.log(request)
+        data = JSON.parse(request.response);
+        if (data.result) {
+            $("#blogBtn").text('Post Blog');
+            $("#blogBtn").attr('disabled', 'false');
                 Swal.fire(
                     'Upload',
                     'Upload Successfully',
@@ -42,10 +23,7 @@ $(function () {
                 ).then(function () {
                     $("#addModal").modal('hide')
                     $("#blog")[0].reset();
-                    table.ajax.reload()
-                    // FetchUploads()
-                    // FetchUploads()
-                    // FetchUploads()
+                    $('#responsive-datatable').DataTable().ajax.reload();
                 })
             }
 
@@ -96,33 +74,115 @@ $(function () {
         }
     });
 
+    
+    // fetch to datatable
     var table = $('#responsive-datatable').DataTable({
         "bProcessing": true,
         // "bServerSide": true, 
         ajax: "http://localhost/News-update/commands/upload/uploadFetch.php",
         "columns": [
             { data: "id" },
-            { data: "title" },
+            { 
+                data: "title" ,
+                render: function (data) {
+                    var str = data; 
+                    if (str.length > 24) {
+                        return str.substring(0,25)+'...';
+                    }else{
+                        return str;
+                    }
+                } 
+            },
             { data: "author" },
             { data: "category" },
-            { data: "uid" },
-            { data: "coverimage" },
-            { data: "content" },
-            { data: "datecreated" }
+            { data: "views" },
+            { 
+                data: "coverimage" ,
+                render: function (data) {
+                    var imgsrc = data;
+                    return '<img class="img-fluid" src="../commands/uploadMedia/' + imgsrc +'" alt="uploadMedia" style=" background-size: cover; object-fit: cover; background-position: center; width: 200px; height: 150px;">';
+                }
+            },
+            {
+                    data: "content" ,
+                    render: function (data) {
+                        var str = data; 
+                        return str.substring(0,25)+'...';
+                    } 
+            },
+            { 
+                data: "datecreated" 
+            },
+            { 
+                data: "id" ,
+                render: function(data){
+                    var id = data;
+                    return('<button type="button" id="' + id + '" class="btn btn-primary btn-lg mx-2 editBtn" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fa fa-pencil" aria-hidden="true"></i> </button><button type="button" id="' + id + '" class="btn btn-primary btn-lg mx-2 viewBtn" data-bs-toggle="modal" data-bs-target="#viewModal"><i class="fa fa-eye" aria-hidden="true"></i></button><button type="button" id="' + id + '" name="" id="" class="btn btn-danger mx-2 btn-lg btn-block delBtn"><i class="fa fa-trash" aria-hidden="true"></i></button>');
+
+                }
+            }
         ]
     });
 
-    // var request = new XMLHttpRequest();
-    // request.open("POST", "http://localhost/News-update/commands/upload/uploadFetch.php");
-    // request.send();
-    // request.onload = () => {
-    //     // console.log(request);
-    //     data = request.response;
-    //     if (request.status == 200) {
-    //         // console.log(JSON.parse(request.response))
-    //         console.log(data)
-    //     } else {
-    //         console.log(`error ${request.status} ${request.statusText}`)
-    //     }
-    // }
+
+    // delete from datatable
+    
+    $("body").on('click', '.delBtn', function (e) { 
+        e.preventDefault();
+        deleteUpload = $(this).attr('id');
+        table = 'upload';
+        Swal.fire({
+          title: 'Delete',
+          text: 'Are You Sure You Want TO Delete This Post',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Delete'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            //success
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/News-update/commands/upload/uploadDelete.php",
+                data: { deleteUpload : deleteUpload, table: table },
+                dataType: "json",
+                success: function (response) {
+                    // console.log(response)
+                    if (response.result == 'successfull') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: "Post",
+                            text: "Deleted Successfully",
+                        }).then(function(){
+                            $('#responsive-datatable').DataTable().ajax.reload();
+                            // table.ajax.reload()
+                        })
+                    }
+                }
+            });
+          }
+        })
+    });
+
+    // fetch content for edit post
+
+    $('body').on('click', '.editBtn', function(e){
+        e.preventDefault();
+        edit = $(this).attr('id');
+        console.log(edit);
+        $.ajax({
+            type: "GET",
+            url: "http://localhost/News-update/commands/upload/uploadFetchSingle.php",
+            data: { fetchId : edit  },
+            dataType: "json",
+            success: function (response) {
+                console.log(response)
+            }
+        });
+
+    })
+
+    
+
 });

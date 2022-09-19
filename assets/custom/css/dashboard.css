@@ -49,21 +49,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* dashboard */
-#side_nav {
-    min-width: 250px;
-    max-width: 250px;
-    transition: all 0.3s;
-}
+.main-container{
 
-#sidebarMenu {
-    /* min-width: 250px;
-    max-width: 250px; */
+}
+#side_nav {
+    width: 20% !important;
     transition: all 0.3s;
 }
 
 .content {
     min-height: 100vh;
-    width: 100%;
+    width: 80%;
 }
 
 .navbar-nav .active {
@@ -83,7 +79,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media(max-width: 992px) {
+    .content {
+        min-height: 100vh;
+        width: 100%;
+    }    
     #side_nav {
+        width: auto !important;
         margin-left: -500px;
         position: fixed !important;
         min-height: 100vh;

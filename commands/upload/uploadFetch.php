@@ -5,7 +5,7 @@ require_once "../models/session.php";
 $dbc = new Dbc();
 
 if (($_SERVER['REQUEST_METHOD']) === 'GET') {
-    $fetch = $dbc->UploadAll($cid);
+    $fetch = $dbc->UploadFetchAll($cid);
     echo json_encode([
         'data' => $fetch,
         // 'status' => 200
