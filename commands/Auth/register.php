@@ -82,7 +82,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             if (!empty($newUserName) && !empty($newUserEmail) && !empty($newUserPassword) && !empty($newUserConfirmPassword)) {
                 $result = $dbc->registerUser($newUserName, $newUserEmail, $hash);
                 if ($result) {
-                    $_SESSION['ourUser'] = $newUserEmail;
+                    $_SESSION['u'] = $newUserEmail;
                     echo json_encode([
                         'result' => 'Successfull',
                         'status' => 200

@@ -14,7 +14,7 @@ include "../commands/models/session.php";
     <link rel="stylesheet" href="../assets/bootstrap5.2/bootstrap.min.css">
     <!-- Custom css -->
     <link rel="stylesheet" href="../assets/custom/css/dashboard.css">
-    <link rel="stylesheet" href="../assets/custom/css/fileupload.css">
+    <link rel="stylesheet" href="../assets/plugins/dropify-master/dropify-master/dist/css/dropify.min.css">
     <link rel="stylesheet" href="../assets/custom/css/datatables.css">
     <link rel="stylesheet" href="../assets/custom/css/editor.css">
 
@@ -135,6 +135,7 @@ include "../commands/models/session.php";
                                                 <th class="wd-10p border-bottom-0">VIEWS</th>
                                                 <th class="wd-25p border-bottom-0">MEDIA</th>
                                                 <th class="wd-25p border-bottom-0">CONTENT</th>
+                                                <th class="wd-25p border-bottom-0">DATE CREATED</th>
                                                 <th class="wd-25p border-bottom-0">Action</th>
                                             </tr>
                                         </thead>
@@ -148,6 +149,7 @@ include "../commands/models/session.php";
                 </div>
                 <!-- ==== End Row ==== -->
             </div>
+            
             <!-- ===== Modal ==== -->
             <!-- Add Post  Modal -->
             <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -395,8 +397,8 @@ include "../commands/models/session.php";
     <script src="../assets/custom/js/table-data.js"></script>
 
     <!-- FILE UPLOAD JS -->
-    <script src="../assets/plugins/fileuploads/js/fileupload.js"></script>
-    <script src="../assets/plugins/fileuploads/js/file-upload.js"></script>
+    <script src="../assets/plugins/dropify-master/dropify-master/dist/js/dropify.min.js"></script>
+    <script src="../assets/plugins/dropify-master/dropify-master/dist/js/customDropify.js"></script>
 
     <!-- INTERNAL WYSIWYG Editor JS -->
     <script src="../assets/plugins/wysiwyag/jquery.richtext.js"></script>

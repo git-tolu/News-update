@@ -37,12 +37,20 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     if ($login != null) {
         if (password_verify($userPassword, $login['userPassword'])) {
             $_SESSION['ourUser'] = $userEmail;
-            $_SESSION['status'] = $login['status'];
-            echo json_encode([
-                'login' => 'Successful',
-                'status' => 200
-            ]);
-            die();
+            // $_SESSION['status'] = $login['status'];
+            if($_SESSION['ourUser']){
+                echo json_encode([
+                    'login' => 'Successful',
+                    'status' => 200
+                ]);
+                die();
+            }else{
+                echo json_encode([
+                    'login' => 'Not Successfull',
+                    'status' => 200
+                ]);
+                die();
+            }
         } else {
             echo json_encode([
                 'loginerr' => 'invalid password',
