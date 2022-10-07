@@ -115,6 +115,15 @@ class Dbc extends Database
         $stmt->execute();
         return true;
     }
+
+    public function updatePassword($table, $userPassword, $id){
+        $sql = "UPDATE $table SET userPassword = :userPassword WHERE id = $id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'userPassword' => $userPassword
+        ]);
+        return true;
+    }
     
     public function UploadFetchAll($id)
     {

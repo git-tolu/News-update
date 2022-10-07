@@ -23,49 +23,7 @@
 
 <body id="home">
     <!-- ===== Navbar ====== -->
-    <nav class="navbar  sticky-top navbar-expand-lg  nav_bg navbar-light justify-content-end py-4">
-        <div class="container justify-content-center">
-            <a class="navbar-brand text-uppercase" href="">News-update</a>
-            <div class="d-flex justify-content-end align-items-end text-end">
-                <button class="navbar-toggler d-flex navBtn justify-content-end align-item-end text-end d-lg-none"
-                    type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                    <i id="mobile-menu" class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                    <i class="fa fa-times" style="display: none;" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link active text-uppercase px-5" href="#home">
-                            Home</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  px-5 text-uppercase arrowHover" href="#" id="dropdownId"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <i
-                                class="fa fa-angle-right float-end arrow" style="visibility: collapse;"
-                                aria-hidden="true"></i> </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                            <a class="dropdown-item" href="#">Action 6</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5" href="#contact"> Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5 btn btn-outline-primary " href="#">
-                            Be a registered user
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include "includes/header.php" ?>
     <!-- ===== End Navbar ====== -->
     <!-- ===== Content ====== -->
     <div class="container">
@@ -86,7 +44,7 @@
                 </div>
                 <div class="d-flex justify-content-between" data-aos="fade-right" data-aos-delay="800">
                     <button type="button" class="btn btn-primary sm-btn" data-toggle="button" aria-pressed="false"
-                        autocomplete="off"> <a href="../userDashboard/index.html" class="text-decoration-none text-white"> <i class="fa fa-bookmark" aria-hidden="true"></i> Post blog</a> </button>
+                        autocomplete="off"> <a href="../userDashboard/index" class="text-decoration-none text-white"> <i class="fa fa-bookmark" aria-hidden="true"></i> Post blog</a> </button>
                     <button type="button" class="btn btn-outline-primary sm-btn" data-toggle="button"
                         aria-pressed="false" autocomplete="off"> <i class="fa fa-tag" aria-hidden="true"></i>
                         Register to receive updates </button>
@@ -135,8 +93,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -162,7 +122,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -177,8 +137,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -204,7 +166,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -219,8 +181,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -246,7 +210,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -261,8 +225,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -288,7 +254,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -303,8 +269,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -330,7 +298,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -345,8 +313,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -372,7 +342,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -387,8 +357,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -414,7 +386,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -429,8 +401,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -456,7 +430,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -471,8 +445,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -498,7 +474,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -513,8 +489,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -540,7 +518,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -555,8 +533,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -582,7 +562,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -597,8 +577,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -624,7 +606,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -639,8 +621,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -666,7 +650,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -681,8 +665,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -708,7 +694,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -723,8 +709,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -750,7 +738,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -765,8 +753,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -792,7 +782,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -807,8 +797,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -834,7 +826,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -849,8 +841,10 @@
                                 src="../media/landing/concept-blogging_88465-58.webp" alt="">
                             <div class="card-body">
                                 <div class="category bg-primary p-2 text-center m-2">Sports</div>
-                                <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
-                                </h4>
+                                <a href="single" class="text-decoration-none card-title text-uppercase blog-title">
+                                    <h4 class="card-title text-uppercase blog-title">Lorem ipsum dolor sit amet consectetur.
+                                    </h4>
+                                </a>
                                 <div class="card-text d-flex m-2">
                                     <p class="sm-btn d-flex">
                                         <i class="fa fa-comment" aria-hidden="true"></i>
@@ -876,7 +870,7 @@
                                 </div>
                                 <div class="card-text float-end">
                                     <p class="read">
-                                        <a href="single.page" class="read  text-muted sm-btn">
+                                        <a href="single" class="read  text-muted sm-btn">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             Read more
                                         </a>
@@ -959,7 +953,7 @@
                                 By Tolu
                             </div>
                             <div class="card-text">
-                                <p class="read"> <a href="single.html" class="read text-muted"><i class="fa fa-arrow-right"
+                                <p class="read"> <a href="single" class="read text-muted"><i class="fa fa-arrow-right"
                                             aria-hidden="true"></i>Read more</a> </p>
                             </div>
                         </div>
@@ -1043,7 +1037,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                            <img src="../assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                             <h3>Toluwanimi Adejumobi</h3>
                             <h4>Ceo &amp; Founder</h4>
                             <p>
@@ -1061,7 +1055,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                            <img src="../assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                             <h3>Bode Thomos</h3>
                             <h4>senior Administrator</h4>
                             <p>
@@ -1078,7 +1072,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                            <img src="../assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                             <h3>David Goliath</h3>
                             <h4>Senior Frontend Developer</h4>
                             <p>
@@ -1095,7 +1089,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                            <img src="../assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                             <h3>Ganiu Dudu</h3>
                             <h4>Senoir backend developer</h4>
                             <p>
@@ -1113,7 +1107,7 @@
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                            <img src="../assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                             <h3>Praise Agba</h3>
                             <h4>Board of director</h4>
                             <p>
@@ -1135,42 +1129,7 @@
         </div>
         <!-- ===== End swiper carousel ======= -->
         <!-- ===== Footer ==== -->
-        <footer id="contact" class="footer p-3" data-aos="fade-up" data-aos-delay="600">
-            <div class="footer">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 social text-center">
-                            <ul class="text-center clear d-flex justify-content-center align-items-center text-center">
-                                <li>
-                                    <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://twitter.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://www.youtube.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://www.linkedin.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://myaccount.google.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-google-plus"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                            Copyright © 2022 <a href="javascript:void(0)">Update</a>. Designed with by <a
-                                href="javascript:void(0)">MatrixHack</a> All rights reserved.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            <?php include "includes/footer.php" ?>
         <!-- ===== End Footer ======= -->
     </div>
     <!-- ===== Content ====== -->

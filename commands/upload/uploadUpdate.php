@@ -14,8 +14,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         ]);
         die();
     }
-    if ($dbc->validateInput($_POST['title'])) {
-        $title = $dbc->test_input($_POST['title']);
+    if ($dbc->validateInput($_POST['blog_title'])) {
+        $title = $dbc->test_input($_POST['blog_title']);
     } else {
         echo json_encode([
             'titleerr' => 'title cannot be empty',
@@ -24,8 +24,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['author'])) {
-        $author = $dbc->test_input($_POST['author']);
+    if ($dbc->validateInput($_POST['blog_Author'])) {
+        $author = $dbc->test_input($_POST['blog_Author']);
     } else {
         echo json_encode([
             'authorerr' => 'author cannot be empty',
@@ -34,8 +34,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['category'])) {
-        $category = $dbc->test_input($_POST['category']);
+    if ($dbc->validateInput($_POST['blog_category'])) {
+        $category = $dbc->test_input($_POST['blog_category']);
     } else {
         echo json_encode([
             'categoryerr' => 'category cannot be empty',
@@ -44,8 +44,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_FILES['coverimage']['name'])) {
-        $coverimage = $dbc->test_input($_FILES['coverimage']['name']);
+    if ($dbc->validateInput($_FILES['blog_media']['name'])) {
+        $coverimage = $dbc->test_input($_FILES['blog_media']['name']);
     } else {
         echo json_encode([
             'coverimageerr' => 'coverimage cannot be empty',
@@ -54,8 +54,8 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['content'])) {
-        $content = $dbc->test_input($_POST['content']);
+    if ($dbc->validateInput($_POST['blog_content'])) {
+        $content = $dbc->test_input($_POST['blog_content']);
     } else {
         echo json_encode([
             'content' => 'textarea cannot be empty',
@@ -66,7 +66,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     if (!empty($title) && !empty($author) && !empty($category) && !empty($coverimage) && !empty($content)) {
         $folder = '../uploadMedia/';
         $newImage =  time() . '_' . rand(500000, 500000000000) . $coverimage;
-        move_uploaded_file($_FILES['coverimage']['tmp_name'], $folder . $newImage);
+        move_uploaded_file($_FILES['blog_media']['tmp_name'], $folder . $newImage);
         $result = $dbc->uploadUpdate($updateId, $title, $author, $category, $newImage, $content);
         if ($result) {
             // $_SESSION['ourUser'] = $newUserEmail;

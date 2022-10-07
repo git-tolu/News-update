@@ -171,8 +171,6 @@ include "../commands/models/session.php";
                                                 <h3 class="card-title">Post Blog</h3>
                                             </div>
                                             <div class="card-body">
-                                                <div id="error" style="border-radius: 50px;" class="bg-danger text-center justify-content-center aligin-items-center d-flex text-dark">
-                                                </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
@@ -215,7 +213,7 @@ include "../commands/models/session.php";
                                                                 <h3 class="card-title">Blog Content</h3>
                                                             </div>
                                                             <div class="card-body">
-                                                                <textarea name="blog_content" id="summernote" >Write your blog content here</textarea>
+                                                                <textarea name="blog_content" class="summernote" >Write your blog content here</textarea>
                                                                 <span class="text-danger" id="contenterr"></span>
                                                             </div>
                                                         </div>
@@ -225,7 +223,7 @@ include "../commands/models/session.php";
                                         </div>
                                         <div class="modal-footer text-center justify-content-center d-flex align-items-center">
                                             <button id="blogBtn" type="submit" class="btn btn-primary"> Post Blog </button>
-                                            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-danger" type="button" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -248,31 +246,32 @@ include "../commands/models/session.php";
                                 <div class="card-header text-center justify-content-center aligin-items-center d-flex">
                                 </div>
                                 <div class="card-body">
-                                    <form id="blog" enctype="multipart/form-data">
+                                    <form id="editBlog" enctype="multipart/form-data">
                                         <div class="card">
                                             <div class="card-header">
                                                 <h3 class="card-title">Edit Blog</h3>
                                             </div>
                                             <div class="card-body">
-                                                <div id="error" style="border-radius: 50px;" class="bg-danger text-center justify-content-center aligin-items-center d-flex text-dark">
-                                                </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
                                                             <label class="form-label">Blog Title<span class="text-red">*</span></label>
-                                                            <input type="text" name="blog_title" class="form-control" placeholder="Title of post">
+                                                            <input type="hidden" id="uploadId" name="updateId" class="form-control" placeholder="Title of post">
+                                                            <input type="text" id="blog_title" name="blog_title" class="form-control" placeholder="Title of post">
+                                                            <span class="text-danger" id="editTitleerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group">
                                                             <label class="form-label">Author<span class="text-red">*</span></label>
-                                                            <input type="text" name="blog_Author" class="form-control" placeholder="name of Author">
+                                                            <input type="text" id="blog_Author" name="blog_Author" class="form-control" placeholder="name of Author">
+                                                            <span class="text-danger" id="editAuthorerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label class="form-label">select category <span class="text-red">*</span></label>
-                                                            <select name="blog_category" class="form-control" id="">
+                                                            <select name="blog_category" class="form-control" id="blog_category">
                                                                 <option value="">select category...</option>
                                                                 <option value="business">Business</option>
                                                                 <option value="consultant">Consultant</option>
@@ -280,11 +279,14 @@ include "../commands/models/session.php";
                                                                 <option value="UI/UX">UI/UX</option>
                                                                 <option value="technology">Technology</option>
                                                             </select>
+                                                            <span class="text-danger" id="editCategoryerr"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label class="form-label">Cover image <span class="text-red">*</span></label>
-                                                        <input type="file" name="blog_media" class="dropify" data-bs-height="180" />
+                                                        <input type="hidden" name="oldMedia" id="oldMedia">
+                                                        <input type="file" name="blog_media" id="blog_media" class="dropify" accept="image/*,video/*" data-bs-height="180" />
+                                                        <span class="text-danger" id="editCoverimageerr"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -294,7 +296,8 @@ include "../commands/models/session.php";
                                                                 <h3 class="card-title">Blog Content</h3>
                                                             </div>
                                                             <div class="card-body">
-                                                                <textarea name="blog_content" id="summernote2" >Write your blog content here</textarea>
+                                                                <textarea name="blog_content" id="blog_content" class="summernote2" ></textarea>
+                                                                <span class="text-danger" id="editContenterr"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,9 +305,9 @@ include "../commands/models/session.php";
                                             </div>
                                         </div>
                                         <div class="modal-footer text-center justify-content-center d-flex align-items-center">
-                                            <button id="blogBtn" type="submit" class="btn btn-primary"> Post Blog
+                                            <button id="editElogBtn" type="submit" class="btn btn-primary"> Post Blog
                                             </button>
-                                            <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-danger" type="button" data-bs-dismiss="modal" aria-label="Close" aria-hidden="true">Close</button>
                                         </div>
                                     </form>
                                 </div>
@@ -402,7 +405,7 @@ include "../commands/models/session.php";
 
     <!-- INTERNAL WYSIWYG Editor JS -->
     <script src="../assets/plugins/summernote-0.8.18-dist/summernote-lite.min.js"></script>
-    <!-- <script src="../assets/plugins/summernote-0.8.18-dist/customSummer.js"></script> -->
+    <script src="../assets/plugins/summernote-0.8.18-dist/customSummer.js"></script>
 
     <!-- sweet alert -->
     <script src="../assets/bootstrap/js/sweet.js"></script>
@@ -411,10 +414,6 @@ include "../commands/models/session.php";
     <script src="../assets/custom/js/dashboard.js"></script>
     <script src="../assets/custom/js/upload.js"></script>
     <script>
-      $(document).ready(function() {
-          $('#summernote').summernote();
-          $('#summernote2').summernote();
-      });
     </script>
   
 </body>

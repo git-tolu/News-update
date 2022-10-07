@@ -24,49 +24,7 @@
 <body>
     <!-- ===== Content ====== -->
     <!-- ===== Navbar ====== -->
-    <nav class="navbar  sticky-top navbar-expand-lg  nav_bg navbar-light justify-content-end py-4">
-        <div class="container justify-content-center">
-            <a class="navbar-brand text-uppercase" href="">News-update</a>
-            <div class="d-flex justify-content-end align-items-end text-end">
-                <button class="navbar-toggler d-flex navBtn justify-content-end align-item-end text-end d-lg-none"
-                    type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                    <i id="mobile-menu" class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                    <i class="fa fa-times" style="display: none;" aria-hidden="true"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link active text-uppercase px-5" href="#home">
-                            Home</span></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  px-5 text-uppercase arrowHover" href="#" id="dropdownId"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <i
-                                class="fa fa-angle-right float-end arrow" style="visibility: collapse;"
-                                aria-hidden="true"></i> </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                            <a class="dropdown-item" href="#">Action 6</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                            <a class="dropdown-item" href="#">Action 1</a>
-                            <a class="dropdown-item" href="#">Action 2</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5" href="#contact"> Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase px-5 btn btn-outline-primary " href="#">
-                            Be a registered user
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include "includes/header.php" ?>
     <!-- ===== End Navbar ====== -->
     <div class="container" id="home">
         <!-- ==== Post  ==== -->
@@ -84,7 +42,7 @@
                 <div class="new-inner">
                     <div class="card shadow" data-aos="fade-zoom" data-aos-delay="600">
                         <div class="card-header">
-                            <img class="card-img-top singe-img" src="/media/landing/—Pngtree—personal blog_2853664.png"
+                            <img class="card-img-top singe-img" src="../media/landing/—Pngtree—personal blog_2853664.png"
                                 width="500px" height="500px" alt="">
                         </div>
                         <div class="card-body">
@@ -379,42 +337,7 @@
         </div>
         <!-- ===== End swiper carousel ======= -->
         <!-- ===== Footer ==== -->
-        <footer id="contact" class="footer p-3" data-aos="fade-up" data-aos-delay="700">
-            <div class="footer">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 social text-center">
-                            <ul class="text-center clear d-flex justify-content-center align-items-center text-center">
-                                <li>
-                                    <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://twitter.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://www.youtube.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://www.linkedin.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="social-icon" href="https://myaccount.google.com/" target="_blank"><i
-                                            class="fa p-3 footer-icon fa-google-plus"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                            Copyright © 2022 <a href="javascript:void(0)">Update</a>. Designed with by <a
-                                href="javascript:void(0)">MatrixHack</a> All rights reserved.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php include "includes/footer.php" ?>
         <!-- ===== End Footer ======= -->
     </div>
     <!-- ===== Content ====== -->

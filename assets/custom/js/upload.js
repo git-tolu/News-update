@@ -1,5 +1,5 @@
 $(function () {
-    // register api httprequest
+    // insert post api httprequest
     $("#blog").submit(function (e) {
         e.preventDefault();
         const request = new XMLHttpRequest();
@@ -23,6 +23,7 @@ $(function () {
                 ).then(function () {
                     $("#addModal").modal('hide')
                     $("#blog")[0].reset();
+                    $("#blogBtn").attr('disabled', 'false');
                     $('#responsive-datatable').DataTable().ajax.reload();
                 })
             }
@@ -126,14 +127,13 @@ $(function () {
 
 
     // delete from datatable
-    
     $("body").on('click', '.delBtn', function (e) { 
         e.preventDefault();
         deleteUpload = $(this).attr('id');
         table = 'upload';
         Swal.fire({
           title: 'Delete',
-          text: 'Are You Sure You Want TO Delete This Post',
+          text: 'Are You Sure You Want To Delete This Post',
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
@@ -166,22 +166,136 @@ $(function () {
     });
 
     // fetch content for edit post
-
     $('body').on('click', '.editBtn', function(e){
         e.preventDefault();
         edit = $(this).attr('id');
         console.log(edit);
         $.ajax({
-            type: "GET",
+            type: "POST",
             url: "http://localhost/News-update/commands/upload/uploadFetchSingle.php",
             data: { fetchId : edit  },
             dataType: "json",
             success: function (response) {
-                console.log(response)
+                // console.log(response)
+                $("#uploadId").val(response.data['id']);
+                $("#blog_title").val(response.data['title']);
+                $("#blog_Author").val(response.data['author']);
+                $("#blog_category").val(response.data['category']);
+                $("#oldMedia").val(response.data['coverimage']);
+                 content = response.data['content'];
+                $('.summernote2').summernote('code', content);
+
             }
         });
 
     })
+
+    // update post api httprequest
+    $("#editBlog").submit(function (e) {
+        e.preventDefault();
+        const request = new XMLHttpRequest();
+        request.open("POST", "http://localhost/News-update/commands/upload/uploadUpdate.php")
+        var myForm = document.getElementById("editBlog");
+        var formData = new FormData(myForm);
+        request.send(formData)
+
+        request.onload = () => {
+            $("#editElogBtn").html('<div class="spinner-border text-white mx-4"></div>');
+            // console.log(request)
+            data = JSON.parse(request.response);
+            if (data.result) {
+                $("#editElogBtn").text('Post Blog');
+                    Swal.fire(
+                        'Upload',
+                        'Upload Edited Successfully',
+                        'success'
+                    ).then(function () {
+                        $("#editBlog")[0].reset();
+                        $("#editModal").modal('hide')
+                        $('#responsive-datatable').DataTable().ajax.reload();
+                    })
+            }
+
+
+            if (data.titleerr) {
+                $("#editTitleerr").text(data.titleerr + ' *');
+                if (data.titleerr == 'undefined') {
+                    $("#editTitleerr").text(' ');
+                }
+            } else {
+                $("#editTitleerr").text(' ');
+            }
+
+            if (data.authorerr) {
+                $("#editAuthorerr").text(data.authorerr + ' *');
+                if (data.authorerr == 'undefined') {
+                    $("#editAuthorerr").text(' ');
+                }
+            } else {
+                $("#editAuthorerr").text(' ');
+            }
+
+            if (data.categoryerr) {
+                $("#editCategoryerr").text(data.categoryerr + ' *');
+                if (data.categoryerr == 'undefined') {
+                    $("#editCategoryerr").text(' ');
+                }
+            } else {
+                $("#editCategoryerr").text(' ');
+            }
+
+            if (data.coverimageerr) {
+                $("#editCoverimageerr").text(data.coverimageerr + ' *');
+                if (data.coverimageerr == 'undefined') {
+                    $("#editCoverimageerr").text(' ');
+                }
+            } else {
+                $("#editCoverimageerr").text(' ');
+            }
+
+            if (data.contenterr) {
+                $("#editContenterr").text(data.contenterr + ' *');
+                if (data.contenterr == 'undefined') {
+                    $("#editContenterr").text(' ');
+                }
+            } else {
+                $("#editContenterr").text(' ');
+            }
+        }
+    });
+    // $('#editBlog').submit(function (e) { 
+        //     e.preventDefault();
+        //         $("#editElogBtn").html('<div class="spinner-border text-white mx-4"></div>');
+        //         // $("#editElogBtn").attr('disabled', 'true');
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "http://localhost/News-update/commands/upload/uploadUpdate.php",
+        //         contentType: false,
+        //         processData: false,
+        //         cache: false,
+        //         data: new FormData(this),
+        //         // dataType: "json",
+        //         success: function (response) {
+        //             console.log(response)
+        //             data = JSON.parse(response)
+        //             console.log(data);
+        //             if (data.result) {
+        //                 $("#editElogBtn").text('Post Blog');
+        //                 $("#editElogBtn").attr('disabled', 'false');
+        //                 Swal.fire(
+        //                     'Upload',
+        //                     'Upload Successfully',
+        //                     'success'
+        //                 ).then(function () {
+        //                     $("#addModal").modal('hide')
+        //                     $("#editBlog")[0].reset();
+        //                     $("#editElogBtn").attr('disabled', 'false');
+        //                     $('#responsive-datatable').DataTable().ajax.reload();
+        //                 })
+        //             }
+        //         }
+        //     });
+        // });
 
     
 
