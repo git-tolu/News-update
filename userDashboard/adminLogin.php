@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login for user's dashboard</title>
+    <link rel="shortcut icon" href="../media/update-logo.png" type="image/x-icon">
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <!-- Custom css -->

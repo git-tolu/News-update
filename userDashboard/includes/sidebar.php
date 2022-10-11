@@ -1,10 +1,8 @@
 <div class="d-flex flex-column sticky-top  fullnav p-3 bg-white" style="height: 100vh;" id="side_nav">
             <div class="d-flex position-sticky navbar-brand">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                    <span class="fs-4">News-update</span>
+                    <img src="../media/update-logo.png" class="bi me-2" width="50" height="50" alt="logo">
+                    <span class="fs-4"> News-update</span>
                 </a>
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABl0lEQVRoge2ZTU7DQAyFH9yBKJQT0fYKHAAOQNatOBZwAVjRBecgYcMqXcQRNJpGtucnFvKTRhMpdvK+TDLjaACXy6XVFsALgG8A/cKtIy8bKcSTAfPn2p4LsaWEHwCPAFbSp5BBKwANBk89gDUn6ZWCm3y+1GoweHvmBHcUfJ3TkVI1Bm8tJ3h8F60q6O9yASNZ5CDW5CDWlALkHkAVkV/RNZJLMv0+UOwBOpiKcnu6FkdsfxKQKwAfFP8J2SI6za2ZeVlAQoY4MFoIkT/Nyi6BiYEQ+dOWKByYWAiRv5haaw4mBYTIX2zRGIJJBSHyl6L6/TutHibHMWsOUBgEOB2FFCMxykQZf1HyZv5qkUIfdkwFoPaXcvqtZ85pYYoviKEPOwVM0RJlbnaKhSlWNHKm2BiYImW8ZJ3QwmQB+Tc/VkD5X93iJUoumShRsslBrMlBrCkE0lFvYcttqhvqv6YnQiBv1N9ls6PX6OmdE7zB72ZoAxsjM90MveUm7nF+e3jptpM+hTWG3dPWgPmWvLBHwuVyneoI9StbelnG+CQAAAAASUVORK5CYII=" width="20" height="20" class="close-btn  mt-2 ml-5 pl-5" style="cursor: pointer;">
             </div>
@@ -59,7 +57,7 @@
             <hr>
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <img src="../media/profile/avatar-1.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
                     <strong>Username</strong>
                 </a>
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">

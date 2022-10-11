@@ -9,6 +9,7 @@ include "../commands/models/session.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News-update Dashboard</title>
+    <link rel="shortcut icon" href="../media/update-logo.png" type="image/x-icon">
     <!-- Bootstrap css -->
     <!-- <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../assets/bootstrap5.2/bootstrap.min.css">
@@ -121,7 +122,11 @@ include "../commands/models/session.php";
                             <div class="card-body">
                                 <div class="text-center chat-image mb-5">
                                     <div class="avatar avatar-xxl chat-profile mb-3 brround">
-                                        <a class="" href="profile.html"><img alt="avatar" src="../media/users/21.jpg" class="brround"></a>
+                                        <label for="profilepic">
+                                            <!-- <a class="" href="profile.html"><img alt="avatar" src="../media/users/21.jpg" class="brround"></a> -->
+                                           <img alt="avatar" src="../media/users/21.jpg" class="brround profileupload">
+                                        </label>
+                                        <input type="file" hidden name="profilepic" accept="image/*" id="profilepic">
                                     </div>
                                     <div class="main-chat-msg-name">
                                         <a href="profile.html" class="text-decoration-none">
@@ -464,7 +469,7 @@ include "../commands/models/session.php";
 
     <!--  Custom js -->
     <script src="../assets/custom/js/dashboard.js"></script>
-    <script src="../assets/custom/js/profile.js"></script>
+    <!-- <script src="../assets/custom/js/profile.js"></script> -->
 </body>
 
 </html>
