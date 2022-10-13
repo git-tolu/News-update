@@ -18,7 +18,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         $oldPassword = $dbc->test_input($_POST['oldPassword']);
     } else {
         echo json_encode([
-            'passworderr' => 'password cannot be empty',
+            'oldPassworderr' => 'password cannot be empty',
             'status' => 403
         ]);
         die();
