@@ -16,7 +16,15 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     if ($dbc->validateInput($_POST['oldPassword'])) {
         $oldPassword = $dbc->test_input($_POST['oldPassword']);
-    } else {
+        if (!password_verify($oldPassword, $sessionSelect['userPassword'])) {
+            echo json_encode([
+                'oldPassworderr' => 'Invalid password',
+                'status' => 403
+            ]);
+            die();
+        }
+    }
+    else {
         echo json_encode([
             'oldPassworderr' => 'password cannot be empty',
             'status' => 403
@@ -27,7 +35,16 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     if ($dbc->validateInput($_POST['newPassword'])) {
         $newPassword = $dbc->test_input($_POST['newPassword']);
         $hash = password_hash($newPassword, PASSWORD_DEFAULT);
-    } else {
+        if ($dbc->passwordRegex($newPassword)) {
+            echo json_encode([
+                'newPassworderr' => $dbc->passwordRegex($newPassword),
+                'status' => 403
+            ]);
+            die();
+        }
+
+    }
+    else {
         echo json_encode([
             'newPassworderr' => 'password cannot be empty',
             'status' => 403
@@ -37,7 +54,16 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     if ($dbc->validateInput($_POST['ConfPassword'])) {
         $ConfPassword = $dbc->test_input($_POST['ConfPassword']);
-    } else {
+        if ($dbc->passwordRegex($ConfPassword)) {
+            echo json_encode([
+                'Confpassworderr' => $dbc->passwordRegex($ConfPassword),
+                'status' => 403
+            ]);
+        }
+        die();
+
+    }
+    else {
         echo json_encode([
             'Confpassworderr' => 'password cannot be empty',
             'status' => 403
@@ -45,15 +71,16 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         die();
     }
 
-    if ($dbc->validateInput($_POST['table'])) {
-        $table = $dbc->test_input($_POST['table']);
-    } else {
-        echo json_encode([
-            'tableerr' => 'table cannot be empty',
-            'status' => 403
-        ]);
-        die();
-    }
+    // if ($dbc->validateInput($_POST['table'])) {
+    //     $table = $dbc->test_input($_POST['table']);
+    // }
+    // else {
+    //     echo json_encode([
+    //         'tableerr' => 'table cannot be empty',
+    //         'status' => 403
+    //     ]);
+    //     die();
+    // }
 
 
     if ($newPassword !== $ConfPassword) {
@@ -62,26 +89,30 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
             'status' => 403
         ]);
         die();
-    } else {
+    }
+    else {
+        $table =    `users`;
         $result = $dbc->updatePassword($table, $hash, $uid);
         if ($result) {
             echo json_encode([
                 'result' => 'successful',
                 'status' => '200'
-            ]);        
-        } else {
+            ]);
+            die();
+        }
+        else {
             echo json_encode([
                 'result' => 'Something went wrong',
                 'status' => '200'
-            ]);        
+            ]);
+            die();
         }
-        
+
     }
-    
-} else {
+
+}else {
     echo json_encode([
         'message' => 'wrong method passed',
         'status' => '200'
     ]);
 }
-

@@ -142,8 +142,7 @@ include "includes/sidebar.php"; ?>
                                 <div class="text-center chat-image mb-5">
                                     <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                         <label for="profilepic">
-                                            <!-- <a class="" href="profile.html"><img alt="avatar" src="../media/users/21.jpg" class="brround"></a> -->
-                                            <img alt="avatar" src="../media/users/21.jpg" class="brround profileupload">
+                                            <img alt="avatar" src="../media/profile/avatar-1.jpeg" class="brround profileupload">
                                         </label>
                                         <input type="file" hidden name="profilepic" accept="image/*" id="profilepic">
                                     </div>
@@ -520,6 +519,9 @@ include "includes/sidebar.php"; ?>
     <!--  Custom js -->
     <script src="../assets/custom/js/dashboard.js"></script>
     <script src="../assets/custom/js/profile.js"></script>
+    
+    <!-- sweet alert -->
+    <script src="../assets/bootstrap/js/sweet.js"></script>
 </body>
 
 </html>

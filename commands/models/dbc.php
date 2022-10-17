@@ -38,12 +38,12 @@ class Dbc extends Database
     public function passwordRegex($password)
     {
         // $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
+        // $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
         $specialChars = preg_match('@[^\w]@', $password);
     
-        if (!$lowercase || !$number || !$specialChars || strlen($password) < 6) {
-            return "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
+        if (!$number || !$specialChars || strlen($password) < 6) {
+            return "Password should be at least 6 characters in length and should include at least one number, and one special character.";
         }
         // if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 6) {
         //     return "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
