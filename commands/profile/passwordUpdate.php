@@ -18,7 +18,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         $oldPassword = $dbc->test_input($_POST['oldPassword']);
         if (!password_verify($oldPassword, $sessionSelect['userPassword'])) {
             echo json_encode([
-                'oldPassworderr' => 'Invalid password',
+                'oldPassworderr' => 'This is not your current password',
                 'status' => 403
             ]);
             die();
@@ -59,11 +59,9 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
                 'Confpassworderr' => $dbc->passwordRegex($ConfPassword),
                 'status' => 403
             ]);
+            die();
         }
-        die();
-
-    }
-    else {
+    }else {
         echo json_encode([
             'Confpassworderr' => 'password cannot be empty',
             'status' => 403
@@ -85,13 +83,12 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     if ($newPassword !== $ConfPassword) {
         echo json_encode([
-            'Confpassworderr' => 'passwords donot match',
+            'Confpassworderr' => 'passwords do not match',
             'status' => 403
         ]);
         die();
-    }
-    else {
-        $table =    `users`;
+    }else {
+        $table = `users`;
         $result = $dbc->updatePassword($table, $hash, $uid);
         if ($result) {
             echo json_encode([

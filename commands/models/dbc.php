@@ -37,6 +37,7 @@ class Dbc extends Database
 
     public function passwordRegex($password)
     {
+        
         // $uppercase = preg_match('@[A-Z]@', $password);
         // $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
