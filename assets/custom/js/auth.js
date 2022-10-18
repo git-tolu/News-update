@@ -41,7 +41,7 @@ $(function () {
             method: "POST",
             data: $("#register").serialize() + '&action=register',
             success: function (response) {
-                // console.log(response);
+                // console.log(response);  
                 $("#newUserNameerr").html(response.nameerr);
                 $("#newUserEmailerr").html(response.emailerr);
                 $("#newUserPassworderr").html(response.passworderr);
@@ -69,7 +69,7 @@ $(function () {
             method: "POST",
             data: $("#login").serialize() + '&action=login',
             success: function (response) {
-                // console.log(response);
+                console.log(response);
                 $("#userEmailerr").html(response.emailerr);
                 $("#userPassworderr").html(response.passworderr);
                 $("#userPassworderr").html(response.loginerr);
