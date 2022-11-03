@@ -6,7 +6,7 @@ $dbc = new Dbc();
 
 if (($_SERVER['REQUEST_METHOD']) === 'POST') {
     echo json_encode([
-        'message' => 'wrong method passed',
+        'message' => 'result',
         'status' => '200'
     ]);
 } else {

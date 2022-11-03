@@ -44,7 +44,7 @@
                                         <span id="userPassworderr" class="text-danger"></span>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="button" class="form-control btn btn-outline-primary" name="inputSubmit"
+                                    <input type="submit" class="form-control btn btn-outline-primary" name="inputSubmit"
                                         id="loginBTN" value="Login">
                                 </div>
                                 <div class="form-group mb-2">
@@ -76,7 +76,7 @@
                                         <span id="newUserConfirmPassworderr" class="text-danger"></span>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="button" class="form-control btn btn-outline-primary" name="inputSubmit"
+                                    <input type="submit" class="form-control btn btn-outline-primary" name="inputSubmit"
                                         id="registerBTN" value="Register">
                                 </div>
                                 <div class="form-group mb-2">

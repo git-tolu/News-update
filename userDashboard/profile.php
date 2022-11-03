@@ -113,7 +113,7 @@ include "../commands/models/session.php";
         <!-- ==== sidebar ==== -->
         <!-- ==== full sidebar ==== -->
         <?php $page = "profile";
-include "includes/sidebar.php"; ?>
+        include "includes/sidebar.php"; ?>
         <!-- ==== end sidebar ==== -->
         <!-- ==== content ==== -->
         <div class="content">
@@ -142,7 +142,8 @@ include "includes/sidebar.php"; ?>
                                 <div class="text-center chat-image mb-5">
                                     <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                         <label for="profilepic">
-                                            <img alt="avatar" src="../media/profile/avatar-1.jpeg" class="brround profileupload">
+                                            <img alt="avatar" src="../media/profile/avatar-1.jpeg"
+                                                class="brround profileupload">
                                         </label>
                                         <input type="file" hidden name="profilepic" accept="image/*" id="profilepic">
                                     </div>
@@ -161,10 +162,10 @@ include "includes/sidebar.php"; ?>
                                                 <i class="fa fa-eye zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                                 <!-- <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i> -->
                                             </a>
-                                            <input class="input100 form-control" name="oldPassword" id="oldPassword" type="password"
-                                                placeholder="Current Password"><br>
-                                            </div>
-                                            <span class="text-danger" id="oldPassworderr"></span>
+                                            <input class="input100 form-control" name="oldPassword" id="oldPassword"
+                                                type="password" placeholder="Current Password"><br>
+                                        </div>
+                                        <span class="text-danger" id="oldPassworderr"></span>
                                         <!-- <input type="password" class="form-control" value="password"> -->
                                     </div>
                                     <div class="form-group">
@@ -173,7 +174,8 @@ include "includes/sidebar.php"; ?>
                                             <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                 <i class="fa fa-eye zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                             </a>
-                                            <input class="input100 form-control" type="password" name="newPassword" id="newPassword" placeholder="New Password"><br>
+                                            <input class="input100 form-control" type="password" name="newPassword"
+                                                id="newPassword" placeholder="New Password"><br>
                                         </div>
                                         <span class="text-danger" id="newPassworderr"></span>
                                         <!-- <input type="password" class="form-control" value="password"> -->
@@ -184,55 +186,56 @@ include "includes/sidebar.php"; ?>
                                             <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                 <i class="fa fa-eye zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                             </a>
-                                            <input class="input100 form-control" name="ConfPassword" id="ConfPassword" type="password"
-                                                placeholder="Confirm Password"><br>
-                                            </div>
-                                            <span class="text-danger" id="ConfPassworderr"></span>
+                                            <input class="input100 form-control" name="ConfPassword" id="ConfPassword"
+                                                type="password" placeholder="Confirm Password"><br>
+                                        </div>
+                                        <span class="text-danger" id="ConfPassworderr"></span>
                                         <!-- <input type="password" class="form-control" value="password"> -->
                                     </div>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <button class="btn btn-primary" type="submit" id="passwordUpdateBtn">Update</button>
-                                    <a href="javascript:void(0)" class="btn btn-danger">Cancel</a>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="card panel-theme">
-                            <div class="card-header">
-                                <div class="float-start">
-                                    <h3 class="card-title">Contact</h3>
-                                </div>
-                                <div class="clearfix"></div>
+                                    <div class="card-footer text-end">
+                                        <button class="btn btn-primary" type="submit"
+                                            id="passwordUpdateBtn">Update</button>
+                                        <button type="reset" class="btn btn-danger">Cancel</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="card-body no-padding">
-                                <ul class="list-group no-margin">
-                                    <li class="list-group-item d-flex ps-3">
-                                        <div class="social social-profile-buttons me-2">
-                                            <a class="social-icon text-primary text-decoration-none "
-                                                href="javascript:void(0)">
-                                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-                                        <a href="javascript:void(0)"
-                                            class="my-auto text-decoration-none">support@demo.com</a>
-                                    </li>
-                                    <li class="list-group-item d-flex ps-3">
-                                        <div class="social social-profile-buttons me-2">
-                                            <a class="social-icon text-primary text-decoration-none"
-                                                href="javascript:void(0)"><i class="fa fa-globe"></i></a>
-                                        </div>
-                                        <a href="javascript:void(0)"
-                                            class="my-auto text-decoration-none">www.abcd.com</a>
-                                    </li>
-                                    <li class="list-group-item d-flex ps-3">
-                                        <div class="social social-profile-buttons me-2">
-                                            <a class="social-icon text-primary text-decoration-none"
-                                                href="javascript:void(0)"><i class="fa fa-phone"></i></a>
-                                        </div>
-                                        <a href="javascript:void(0)" class="my-auto text-decoration-none">+125 5826
-                                            3658</a>
-                                    </li>
-                                </ul>
+                            <div class="card panel-theme">
+                                <div class="card-header">
+                                    <div class="float-start">
+                                        <h3 class="card-title">Contact</h3>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="card-body no-padding">
+                                    <ul class="list-group no-margin">
+                                        <li class="list-group-item d-flex ps-3">
+                                            <div class="social social-profile-buttons me-2">
+                                                <a class="social-icon text-primary text-decoration-none "
+                                                    href="javascript:void(0)">
+                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                            <a href="javascript:void(0)"
+                                                class="my-auto text-decoration-none">support@demo.com</a>
+                                        </li>
+                                        <li class="list-group-item d-flex ps-3">
+                                            <div class="social social-profile-buttons me-2">
+                                                <a class="social-icon text-primary text-decoration-none"
+                                                    href="javascript:void(0)"><i class="fa fa-globe"></i></a>
+                                            </div>
+                                            <a href="javascript:void(0)"
+                                                class="my-auto text-decoration-none">www.abcd.com</a>
+                                        </li>
+                                        <li class="list-group-item d-flex ps-3">
+                                            <div class="social social-profile-buttons me-2">
+                                                <a class="social-icon text-primary text-decoration-none"
+                                                    href="javascript:void(0)"><i class="fa fa-phone"></i></a>
+                                            </div>
+                                            <a href="javascript:void(0)" class="my-auto text-decoration-none">+125 5826
+                                                3658</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -397,7 +400,8 @@ include "includes/sidebar.php"; ?>
                                                 <input type="checkbox" name="custom-switch-checkbox"
                                                     class="custom-switch-input" checked="">
                                                 <span class="custom-switch-indicator me-3"></span>
-                                                <span class="custom-switch-description mg-l-10">Show Notfication</span>
+                                                <span class="custom-switch-description mg-l-10">Show
+                                                    Notfication</span>
                                             </label>
                                         </div>
                                         <div class="form-group mg-b-10">
@@ -432,7 +436,8 @@ include "includes/sidebar.php"; ?>
                                                 <input type="checkbox" name="custom-switch-checkbox"
                                                     class="custom-switch-input">
                                                 <span class="custom-switch-indicator me-3"></span>
-                                                <span class="custom-switch-description mg-l-10">Security Alert</span>
+                                                <span class="custom-switch-description mg-l-10">Security
+                                                    Alert</span>
                                             </label>
                                         </div>
                                         <div class="form-group mg-b-10">
@@ -440,7 +445,8 @@ include "includes/sidebar.php"; ?>
                                                 <input type="checkbox" name="custom-switch-checkbox"
                                                     class="custom-switch-input" checked="">
                                                 <span class="custom-switch-indicator me-3"></span>
-                                                <span class="custom-switch-description mg-l-10">Always Sign In</span>
+                                                <span class="custom-switch-description mg-l-10">Always Sign
+                                                    In</span>
                                             </label>
                                         </div>
                                     </div>
@@ -465,63 +471,62 @@ include "includes/sidebar.php"; ?>
                             </div>
                         </div>
                     </div>
+                    <!-- ==== End Row ==== -->
                 </div>
-                <!-- ==== End Row ==== -->
-            </div>
-            <!-- ===== Footer ==== -->
-            <footer id="contact" class="footer ">
-                <div class="footer">
-                    <div class="container">
-                        <div class="row card align-items-center mt-5 pt-3">
-                            <div class="col-md-12 col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center social text-center">
-                                <ul
-                                    class="text-center clear d-flex justify-content-center align-items-center text-center">
-                                    <li>
-                                        <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i
-                                                class="fa footer-icon fa-facebook"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="social-icon" href="https://twitter.com/" target="_blank"><i
-                                                class="fa footer-icon fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="social-icon" href="https://www.youtube.com/" target="_blank"><i
-                                                class="fa footer-icon fa-youtube"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="social-icon" href="https://www.linkedin.com/" target="_blank"><i
-                                                class="fa footer-icon fa-linkedin"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="social-icon" href="https://myaccount.google.com/" target="_blank"><i
-                                                class="fa footer-icon fa-google-plus"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center">
-                                Copyright © 2022 <a href="javascript:void(0)">Update</a>. Designed with by <a
-                                    href="javascript:void(0)">MatrixHack</a> All rights reserved.
+                <!-- ===== Footer ==== -->
+                <footer id="contact" class="footer ">
+                    <div class="footer">
+                        <div class="container">
+                            <div class="row card align-items-center mt-5 pt-3">
+                                <div class="col-md-12 col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center social text-center">
+                                    <ul
+                                        class="text-center clear d-flex justify-content-center align-items-center text-center">
+                                        <li>
+                                            <a class="social-icon" href="https://www.facebook.com/" target="_blank"><i
+                                                    class="fa footer-icon fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="social-icon" href="https://twitter.com/" target="_blank"><i
+                                                    class="fa footer-icon fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="social-icon" href="https://www.youtube.com/" target="_blank"><i
+                                                    class="fa footer-icon fa-youtube"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="social-icon" href="https://www.linkedin.com/" target="_blank"><i
+                                                    class="fa footer-icon fa-linkedin"></i></a>
+                                        </li>
+                                        <li>
+                                            <a class="social-icon" href="https://myaccount.google.com/"
+                                                target="_blank"><i class="fa footer-icon fa-google-plus"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-12 col-sm-12 mt-3 mt-lg-0 text-center">
+                                    Copyright © 2022 <a href="javascript:void(0)">Update</a>. Designed with by <a
+                                        href="javascript:void(0)">MatrixHack</a> All rights reserved.
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </footer>
-            <!-- ===== End Footer ======= -->
+                </footer>
+                <!-- ===== End Footer ======= -->
+                <!-- ==== end content ==== -->
+            </div>
             <!-- ==== end content ==== -->
         </div>
-        <!-- ==== end content ==== -->
-    </div>
-    <!-- ==== end coontent ==== -->
-    <!-- Bootstrap js -->
-    <script src="../assets/bootstrap/js/jquery.min.js"></script>
-    <script src="../assets/bootstrap5.2/bootstrap.bundle.min.js"></script>
+        <!-- ==== end coontent ==== -->
+        <!-- Bootstrap js -->
+        <script src="../assets/bootstrap/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap5.2/bootstrap.bundle.min.js"></script>
 
-    <!--  Custom js -->
-    <script src="../assets/custom/js/dashboard.js"></script>
-    <script src="../assets/custom/js/profile.js"></script>
-    
-    <!-- sweet alert -->
-    <script src="../assets/bootstrap/js/sweet.js"></script>
+        <!--  Custom js -->
+        <script src="../assets/custom/js/dashboard.js"></script>
+        <script src="../assets/custom/js/profile.js"></script>
+
+        <!-- sweet alert -->
+        <script src="../assets/bootstrap/js/sweet.js"></script>
 </body>
 
 </html>
