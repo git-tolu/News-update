@@ -88,8 +88,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         ]);
         die();
     }else {
-        $table = `users`;
-        $result = $dbc->updatePassword($table, $hash, $uid);
+        $result = $dbc->updatePassword($hash, $uid);
         if ($result) {
             echo json_encode([
                 'result' => 'successful',

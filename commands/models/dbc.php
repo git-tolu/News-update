@@ -117,11 +117,12 @@ class Dbc extends Database
         return true;
     }
 
-    public function updatePassword($table, $userPassword, $id){
-        $sql = "UPDATE $table SET userPassword = :userPassword WHERE id = $id";
+    public function updatePassword($userPassword, $id){
+        $sql = "UPDATE `users` SET userPassword = :userPassword WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
-            'userPassword' => $userPassword
+            'userPassword' => $userPassword,
+            'id' => $id
         ]);
         return true;
     }
@@ -158,4 +159,17 @@ class Dbc extends Database
         $result = in_array($file_ext, $extensions);
         return $result;
     }
+
+    public function updateProfilePic($profilePic, $id){
+        $sql = "UPDATE `users` SET profilePic = :profilePic WHERE id = :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'profilePic' => $profilePic,
+            'id' => $id
+        ]);
+        return true;
+    }
+
+
+
 }
