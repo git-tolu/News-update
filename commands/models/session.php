@@ -9,4 +9,12 @@
     $cid = $cession['id'];
     $cstatus = $cession['status'];
     $cname = $cession['userName'];
+    $profilePic = $cession['profilePic'];
+    $userEmail = $cession['userEmail'];
+    $profilePic = $cession['profilePic'];
+    $profilePic = $cession['profilePic'];
+    $profilePic = $cession['profilePic'];
+    $profilePic = $cession['profilePic'];
+    $profilePic = $cession['profilePic'];
+    $profilePic = $cession['profilePic'];
     // echo $cstatus;

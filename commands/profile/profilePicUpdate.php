@@ -24,7 +24,7 @@ if (($_SERVER['REQUEST_METHOD']) === 'POST') {
         }
         else {
             echo json_encode([
-                'result' => 'Something went wrong',
+                'resulterr' => 'Something went wrong',
                 'status' => '200'
             ]);
             die();

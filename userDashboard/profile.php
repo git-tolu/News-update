@@ -142,10 +142,17 @@ include "../commands/models/session.php";
                                 <div class="text-center chat-image mb-5">
                                     <div class="avatar avatar-xxl chat-profile mb-3 brround">
                                         <label for="profilepic">
-                                            <img alt="avatar" src="../media/profile/avatar-1.jpeg"
-                                                class="brround profileupload">
+                                            <?php if(empty($profilePic)): ?>
+                                                <img alt="avatar" src="../media/profile/avatar-1.jpeg"
+                                                    class="brround profileupload">
+                                            <?php else: ?>
+                                                <img alt="avatar"  src="../commands/profilepic/<?= $profilePic ?>"
+                                                    class="brround profileupload">
+                                            <?php endif; ?>
                                         </label>
-                                        <input type="file" hidden name="profilepic" accept="image/*" id="profilepic">
+                                        <form id="profilePicForm">
+                                            <input type="file" hidden name="profilePic" accept="image/*" id="profilepic">
+                                        </form>
                                     </div>
                                     <div class="main-chat-msg-name">
                                         <a href="profile.html" class="text-decoration-none">
@@ -216,7 +223,7 @@ include "../commands/models/session.php";
                                                 </a>
                                             </div>
                                             <a href="javascript:void(0)"
-                                                class="my-auto text-decoration-none">support@demo.com</a>
+                                                class="my-auto text-decoration-none"><?= $userEmail ?></a>
                                         </li>
                                         <li class="list-group-item d-flex ps-3">
                                             <div class="social social-profile-buttons me-2">
