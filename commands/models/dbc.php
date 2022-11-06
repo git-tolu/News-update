@@ -170,6 +170,23 @@ class Dbc extends Database
         return true;
     }
 
+    public function UpdateProfileIno($id, $firstName, $secondName, $email, $number, $bio, $date, $month, $year){
+        $sql = "UPDATE users SET  firstName = :firstName, secondName = :secondName, userEmail = :email, number = :number, bio = :bio, date = :date, mon = :month, year = :year WHERE id = :id ";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'id' => $id, 
+            'firstName' => $firstName, 
+            'secondName' => $secondName, 
+            'email' => $email, 
+            'number' => $number, 
+            'bio' => $bio, 
+            'date' => $date,
+            'month' => $month,
+            'year' => $year
+        ]);
+        return true;
+    }
+
 
 
 }

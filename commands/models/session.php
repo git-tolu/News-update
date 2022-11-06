@@ -11,10 +11,11 @@
     $cname = $cession['userName'];
     $profilePic = $cession['profilePic'];
     $userEmail = $cession['userEmail'];
-    $profilePic = $cession['profilePic'];
-    $profilePic = $cession['profilePic'];
-    $profilePic = $cession['profilePic'];
-    $profilePic = $cession['profilePic'];
-    $profilePic = $cession['profilePic'];
-    $profilePic = $cession['profilePic'];
+    $firstName = $cession['firstName'];
+    $secondName = $cession['secondName'];
+    $number = $cession['number'];
+    $bio = $cession['bio'];
+    $date = $cession['date'];
+    $mon = $cession['mon'];
+    $year = $cession['year'];
     // echo $cstatus;
