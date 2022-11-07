@@ -119,6 +119,63 @@ $(function () {
         });
     });
 
+    $("#profileInfo").submit(function (e) { 
+        e.preventDefault();
+        $.ajax({
+            processData: false,
+            cache: false,
+            contentType: false,
+            type: "POST",
+            url: "http://localhost/News-update/commands/profile/profileInfo.php",
+            data: new FormData(this),
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.firstnameerr) {
+                    $("#firstnameerr").text(response.firstnameerr + ' *');
+                }
+                if (response.lastnameerr) {
+                    $("#lastnameerr").text(response.lastnameerr + ' *');
+                }
+                if (response.emailerr) {
+                    $("#emailerr").text(response.emailerr + ' *');
+                }
+                if (response.contacterr) {
+                    $("#contacterr").text(response.contacterr + ' *');
+                }
+                if (response.bioerr) {
+                    $("#bioerr").text(response.bioerr + ' *');
+                }
+                if (response.dateerr) {
+                    $("#dateerr").text(response.dateerr + ' *');
+                }
+                if (response.montherr) {
+                    $("#montherr").text(response.montherr + ' *');
+                }
+                if (response.yearerr) {
+                    $("#yearerr").text(response.yearerr + ' *');
+                }
+                if (response.result == 'Successfull') {
+                    Swal.fire(
+                        'Profile Update',
+                        'Profile Updated Successfully',
+                        'success'
+                    ).then(function () {
+                    })
+
+                } else if(response.result == 'Sorry something went wrong'){
+                    Swal.fire(
+                        'Profile Update',
+                        response.result,
+                        'error'
+                    ).then(function () {
+                    })
+                }
+            }
+        });
+        
+    });
+
 
 
 });
